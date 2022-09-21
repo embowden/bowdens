@@ -13,7 +13,14 @@ export const Home = () => {
         <p className="home__poster-subheadline">
           Modern. Ethical. Conscious. Empowering.
         </p>
-        <button className="home__poster-cta">Show me more</button>
+        {/* <button className="home__poster-cta">Show me more</button> */}
+        <NavLink
+          to="/gallery"
+          className="home__poster-cta"
+          // className={(isActive) => "nav__link" + (!isActive ? "" : "--active")}
+        >
+          Show me more
+        </NavLink>
       </div>
       <div className="home__intro">
         <div className="home__intro-container">
