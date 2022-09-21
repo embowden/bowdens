@@ -1,0 +1,118 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__poster {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__poster-text {
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    top: 250px;
+  }
+
+  &__poster-headline {
+    font-size: 26px;
+    padding-bottom: 5px;
+  }
+
+  &__poster-subheadline {
+    padding-bottom: 10px;
+  }
+
+  &__poster-cta {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: inherit;
+    text-transform: uppercase;
+    border: none;
+    padding: 6px 10px;
+  }
+
+  &__intro {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  &__intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 10px 0;
+    border-bottom: 1.5px solid lightgray;
+  }
+
+  &__intro-welcome {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &__intro-company {
+    font-size: 16px;
+  }
+
+  &__intro-blurb {
+    padding: 10px 30px;
+    text-align: center;
+  }
+
+  &__intro-contact {
+    font-style: italic;
+    color: black;
+    border-top: 1.5px solid lightgray;
+    padding: 10px 0;
+    width: 50%;
+    text-align: center;
+  }
+
+  &__review-image {
+    width: 100%;
+  }
+
+  &__review-container {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  &__review-header {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &__review-subheader {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid lightgray;
+    width: 50%;
+  }
+
+  &__review-text {
+    padding: 10px 30px;
+    text-align: center;
+  }
+
+  &__review-person {
+    font-style: italic;
+    color: black;
+    border-top: 1.5px solid lightgray;
+    padding: 10px 0;
+    width: 50%;
+    text-align: center;
+  }
+}

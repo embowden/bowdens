@@ -1,20 +1,51 @@
 import React from "react";
-// import "./footer.scss";
+import { Link, NavLink } from "react-router-dom";
+import "./footer.scss";
+import facebookIcon from "../../assets/icons/facebook.png";
+import instagramIcon from "../../assets/icons/instagram.png";
+import youtubeIcon from "../../assets/icons/youtube.png";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div>Social Media</div>
-      <div>Address</div>
-      <div>Contact Us</div>
-      {/* <a
-        className="footer__text"
-        target="_blank"
-        href="https://github.com/embowden"
-      >
-        github.com/embowden
-      </a> */}
-    </footer>
+    <>
+      <div className="footer__divider"></div>
+      <footer className="footer">
+        <div className="footer__socials">
+          <Link to="https://www.facebook.com">
+            <img
+              src={facebookIcon}
+              alt="facebook icon"
+              className="footer__icon"
+            />
+          </Link>
+          <Link to="https://www.instagram.com">
+            <img
+              src={instagramIcon}
+              alt="instagram icon"
+              className="footer__icon"
+            />
+          </Link>
+          <Link to="https://www.youtube.com">
+            <img
+              src={youtubeIcon}
+              alt="youtube icon"
+              className="footer__icon"
+            />
+          </Link>
+        </div>
+        <div className="footer__address">
+          Bowdens Registered Office, 2nd Floor Diamond Building, 100-102 Great
+          Jewellery Street, London, W1 6QG
+        </div>
+        <NavLink
+          to="/contact"
+          className="footer__contact"
+          // className={(isActive) => "nav__link" + (!isActive ? "" : "--active")}
+        >
+          Contact Us
+        </NavLink>
+      </footer>
+    </>
   );
 };
 
