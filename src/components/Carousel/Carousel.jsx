@@ -19,34 +19,35 @@ export const Caro = () => {
   const text6 = "Diamond Ring";
 
   return (
-    // <div className="carousel__container">
-    <Carousel autoPlay infiniteLoop swipeable={true}>
-      <div>
-        <img alt="" src={image1} />
-        <p className="legend">{text1}</p>
-      </div>
-      <div>
-        <img alt="" src={image2} />
-        <p className="legend">{text2}</p>
-      </div>
-      <div>
-        <img alt="" src={image3} />
-        <p className="legend">{text3}</p>
-      </div>
-      <div>
-        <img alt="" src={image4} />
-        <p className="legend">{text4}</p>
-      </div>
-      <div>
-        <img alt="" src={image5} />
-        <p className="legend">{text5}</p>
-      </div>
-      <div>
-        <img alt="" src={image6} />
-        <p className="legend">{text6}</p>
-      </div>
-    </Carousel>
-    // </div>
+    <div className="caro">
+      <p className="caro__title">Gallery</p>
+      <Carousel autoPlay infiniteLoop swipeable={true} showStatus={false}>
+        <div>
+          <img alt="" src={image1} />
+          <p className="legend">{text1}</p>
+        </div>
+        <div>
+          <img alt="" src={image2} />
+          <p className="legend">{text2}</p>
+        </div>
+        <div>
+          <img alt="" src={image3} />
+          <p className="legend">{text3}</p>
+        </div>
+        <div>
+          <img alt="" src={image4} />
+          <p className="legend">{text4}</p>
+        </div>
+        <div>
+          <img alt="" src={image5} />
+          <p className="legend">{text5}</p>
+        </div>
+        <div>
+          <img alt="" src={image6} />
+          <p className="legend">{text6}</p>
+        </div>
+      </Carousel>
+    </div>
   );
 };
 

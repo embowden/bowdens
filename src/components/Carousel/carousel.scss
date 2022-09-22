@@ -1,3 +1,11 @@
-// .carousel__container {
-//   padding: 50px;
-// }
+.caro {
+  background-color: grey;
+  padding: 30px;
+
+  &__title {
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+}
