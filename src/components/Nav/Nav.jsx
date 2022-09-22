@@ -8,36 +8,48 @@ export const Nav = () => {
     <>
       <div className="navigation">
         <img src={bowdenLogo} alt="Bowdens Logo" className="navigation__logo" />
-        <div className="navigation__divider"></div>
         <nav className="navigation__container">
-          <NavLink
-            to="/"
-            className="navigation__link"
-            // className={(isActive) => "nav__link" + (!isActive ? "" : "--active")}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/about"
-            className="navigation__link"
-            // className={(isActive) => "nav__link" + (!isActive ? "" : "--active")}
-          >
-            About Us
-          </NavLink>
-          <NavLink
-            to="/gallery"
-            className="navigation__link"
-            // className={(isActive) => "nav__link" + (!isActive ? "" : "--active")}
-          >
-            Gallery
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className="navigation__link"
-            // className={(isActive) => "nav__link" + (!isActive ? "" : "--active")}
-          >
-            Contact Us
-          </NavLink>
+          <div className="navigation__box">
+            <NavLink
+              end
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "navigation__link--active" : "navigation__link"
+              }
+            >
+              Home
+            </NavLink>
+          </div>
+          <div className="navigation__box">
+            <NavLink
+              to="about"
+              className={({ isActive }) =>
+                isActive ? "navigation__link--active" : "navigation__link"
+              }
+            >
+              About Us
+            </NavLink>
+          </div>
+          <div className="navigation__box">
+            <NavLink
+              to="gallery"
+              className={({ isActive }) =>
+                isActive ? "navigation__link--active" : "navigation__link"
+              }
+            >
+              Gallery
+            </NavLink>
+          </div>
+          <div className="navigation__box">
+            <NavLink
+              to="contact"
+              className={({ isActive }) =>
+                isActive ? "navigation__link--active" : "navigation__link"
+              }
+            >
+              Contact Us
+            </NavLink>
+          </div>
         </nav>
       </div>
     </>

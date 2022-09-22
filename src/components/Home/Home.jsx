@@ -13,12 +13,7 @@ export const Home = () => {
         <p className="home__poster-subheadline">
           Modern. Ethical. Conscious. Empowering.
         </p>
-        {/* <button className="home__poster-cta">Show me more</button> */}
-        <NavLink
-          to="/gallery"
-          className="home__poster-cta"
-          // className={(isActive) => "nav__link" + (!isActive ? "" : "--active")}
-        >
+        <NavLink to="/gallery" className="home__poster-cta">
           Show me more
         </NavLink>
       </div>
@@ -32,11 +27,7 @@ export const Home = () => {
           accessories, as well as our own collections and beautifully crafted
           custom pieces.
         </p>
-        <NavLink
-          to="/contact"
-          className="home__intro-contact"
-          // className={(isActive) => "nav__link" + (!isActive ? "" : "--active")}
-        >
+        <NavLink to="/contact" className="home__intro-contact">
           Get in touch
         </NavLink>
       </div>
