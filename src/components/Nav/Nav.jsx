@@ -47,7 +47,7 @@ export const Nav = () => {
                 isActive ? "navigation__link--active" : "navigation__link"
               }
             >
-              Contact Us
+              Enquire
             </NavLink>
           </div>
         </nav>

@@ -4,18 +4,24 @@
   align-items: center;
 
   &__poster {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__poster-image {
     height: 100%;
     width: 100%;
   }
 
   &__poster-text {
     color: white;
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    top: 250px;
+    position: absolute;
+    top: 55%;
   }
 
   &__poster-headline {
@@ -28,8 +34,8 @@
   }
 
   &__poster-cta {
-    background-color: white;
-    color: #5c5e60;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
     font-size: 12px;
     font-weight: bold;
     font-family: inherit;
@@ -76,13 +82,17 @@
     padding: 10px 0;
     width: 50%;
     text-align: center;
+
+    &:hover {
+      font-weight: bold;
+    }
   }
 
-  &__review-image {
+  &__article-image {
     width: 100%;
   }
 
-  &__review-container {
+  &__article-container {
     font-size: 12px;
     display: flex;
     flex-direction: column;
@@ -90,12 +100,12 @@
     padding: 10px 0;
   }
 
-  &__review-header {
+  &__article-header {
     text-transform: uppercase;
     font-weight: bold;
   }
 
-  &__review-subheader {
+  &__article-subheader {
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
@@ -104,17 +114,66 @@
     width: 50%;
   }
 
-  &__review-text {
+  &__article-text {
     padding: 10px 30px;
     text-align: center;
   }
 
-  &__review-person {
+  &__article-person {
     font-style: italic;
     color: black;
     border-top: 1.5px solid lightgray;
     padding: 10px 0;
     width: 50%;
     text-align: center;
+  }
+
+  &__squares {
+    display: flex;
+  }
+
+  &__left-square {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+  }
+
+  &__left-image {
+    width: 100%;
+  }
+
+  &__left-link {
+    font-size: 10px;
+    position: absolute;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    font-style: italic;
+    border: none;
+    padding: 6px 10px;
+  }
+
+  &__right-square {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+  &__right-image {
+    width: 100%;
+  }
+
+  &__right-link {
+    font-size: 10px;
+    position: absolute;
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    font-style: italic;
+    border: none;
+    padding: 6px 10px;
   }
 }

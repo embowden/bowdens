@@ -1,7 +1,10 @@
 import React from "react";
+import Caro from "../Carousel/Carousel";
 
-export const Gallery = () => {
-  return <div>Gallery</div>;
-};
+const Gallery = () => (
+  <div>
+    <Caro />
+  </div>
+);
 
 export default Gallery;
