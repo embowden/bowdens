@@ -1,6 +1,7 @@
 import React from "react";
 import Caro from "../Carousel/Carousel";
 import "./gallery.scss";
+import Card from "../Card/Card";
 
 const Gallery = () => {
   const introHeadline = "Client Examples";
@@ -10,13 +11,11 @@ const Gallery = () => {
 
   return (
     <div className="gallery">
-      <section className="gallery__intro">
-        <div className="gallery__intro-text">
-          <p className="gallery__intro-headline">{introHeadline}</p>
-          <p className="gallery__intro-subheadline">{introSubHeadline}</p>
-          <p className="gallery__intro-blurb">{introText}</p>
-        </div>
-      </section>
+      <Card
+        headline={introHeadline}
+        subheadline={introSubHeadline}
+        text={introText}
+      />
       <Caro />
     </div>
   );
