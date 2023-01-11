@@ -1,9 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
 import Card from "../Card/Card";
 
-export const Contact = () => {
+const Contact = () => {
+  const [formNotValid, setFormValid] = useState(true);
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userNumber, setUserNumber] = useState("");
+  const [userMessage, setMessage] = useState("");
+
   const introHeadline = "Enquiry Form";
   const introSubHeadline = "Design your Dreams";
   const introText =
@@ -11,6 +17,29 @@ export const Contact = () => {
 
   const form = useRef();
 
+  //HANDLE CHANGE OF STATE
+  const handleChange = (e) => {
+    if (e.target.name === "userName") {
+      setUserName(e.target.value);
+    } else if (e.target.name === "userEmail") {
+      setUserEmail(e.target.value);
+    } else if (e.target.name === "userNumber") {
+      setUserNumber(e.target.value);
+    } else if (e.target.name === "userMessage") {
+      setMessage(e.target.value);
+    }
+  };
+
+  //FORM VALIDATION
+  const formValidation = () => {
+    if (!userName || !userEmail || !userNumber || !userMessage) {
+      setFormValid(false);
+      return;
+    }
+    return true;
+  };
+
+  //SEND EMAIL VIA EMAILJS
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -31,6 +60,21 @@ export const Contact = () => {
       );
   };
 
+  //HANDLE ON SUBMIT (validation + send email)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formValidation()) {
+      setFormValid(true);
+      setUserName("");
+      setUserEmail("");
+      setUserNumber("");
+      setMessage("");
+      e.target.reset();
+    } else {
+      return false;
+    }
+  };
+
   return (
     <div className="contact">
       <Card
@@ -38,15 +82,15 @@ export const Contact = () => {
         subheadline={introSubHeadline}
         text={introText}
       />
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="user_name" />
-        <label>Email</label>
-        <input type="email" name="user_email" />
-        <label>Contact Number</label>
-        <input type="tel" name="user_number" />
-        <label>Message</label>
-        <textarea name="message" />
+      <form ref={form} onSubmit={handleSubmit}>
+        <label htmlFor="userName">Name</label>
+        <input onChange={handleChange} type="text" name="userName" />
+        <label htmlFor="userEmail">Email</label>
+        <input onChange={handleChange} type="email" name="userEmail" />
+        <label htmlFor="userNumber">Contact Number</label>
+        <input onChange={handleChange} type="tel" name="userNumber" />
+        <label htmlFor="userMessage">Message</label>
+        <textarea onChange={handleChange} name="userMessage" />
         <input type="submit" value="Send" />
       </form>
     </div>
