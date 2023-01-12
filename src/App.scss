@@ -4,3 +4,10 @@
 // @use "./styles/partials/typography";
 // @use "./styles/partials/variables";
 // @use "./styles/partials/wrapper";
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

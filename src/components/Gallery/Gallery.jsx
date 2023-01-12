@@ -1,18 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Caro from "../Carousel/Carousel";
 import "./gallery.scss";
 import Card from "../Card/Card";
 
 const Gallery = () => {
+  //CARD 1
   const introHeadline = "Client Examples";
   const introSubHeadline = "Custom. Bespoke.";
   const introText =
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum impedit alias doloremque debitis non? Aliquid hic ea voluptatem expedita dolorum dolore neque, voluptate velit similique eveniet ratione, soluta quam omnis!";
 
+  //CARD 2
   const secondHeadline = "Interested?";
   const secondSubHeadline = "Make an enquiry";
   const secondText =
-    "Visit this link to be taken to the enquiries page, and begin the journey to creating your dream diamond jewellery.";
+    "Click the link above. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates laboriosam asperiores cupiditate dolor quas quidem accusantium officiis nesciunt, molestiae distinctio adipisci totam esse iste, voluptatem, maiores repellendus mollitia ipsum illo.";
 
   return (
     <div className="gallery">
@@ -20,17 +23,21 @@ const Gallery = () => {
         headline={introHeadline}
         subheadline={introSubHeadline}
         text={introText}
+        weight="big"
       />
       <Caro />
       <Card
         headline={secondHeadline}
-        subheadline={secondSubHeadline}
+        subheadline={
+          <Link to="/contact" className="gallery__link">
+            {secondSubHeadline}
+          </Link>
+        }
         text={secondText}
+        weight="big"
       />
     </div>
   );
 };
 
 export default Gallery;
-
-// ADD LINK TO ENQUIRY PAGE

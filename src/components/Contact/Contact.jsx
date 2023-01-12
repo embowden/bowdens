@@ -119,6 +119,7 @@ const Contact = () => {
         headline={introHeadline}
         subheadline={introSubHeadline}
         text={introText}
+        weight="big"
       />
       <form ref={form} onSubmit={handleSubmit} className="contact__form">
         <div className="contact__box">

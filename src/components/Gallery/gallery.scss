@@ -1,0 +1,9 @@
+.gallery {
+  &__link {
+    color: grey;
+
+    &:hover {
+      color: darkgray;
+    }
+  }
+}

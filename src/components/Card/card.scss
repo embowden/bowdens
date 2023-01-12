@@ -20,13 +20,28 @@
     font-weight: bold;
     font-size: 26px;
     padding-bottom: 5px;
+
+    &--small {
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
   }
 
   &__intro-subheadline {
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: bold;
     padding-bottom: 10px;
     border-bottom: 1.5px solid lightgray;
+
+    &--small {
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid lightgray;
+    }
   }
 
   &__intro-blurb {
