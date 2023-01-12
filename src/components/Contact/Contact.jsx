@@ -9,12 +9,12 @@ const Contact = () => {
   const [userEmail, setUserEmail] = useState("");
   const [userNumber, setUserNumber] = useState("");
   const [userMessage, setMessage] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const introHeadline = "Enquiry Form";
   const introSubHeadline = "Design your Dreams";
   const introText =
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum impedit alias doloremque debitis non? Aliquid hic ea voluptatem expedita dolorum dolore neque, voluptate velit similique eveniet ratione, soluta quam omnis!";
-
   const form = useRef();
 
   //HANDLE CHANGE OF STATE
@@ -32,17 +32,30 @@ const Contact = () => {
 
   //FORM VALIDATION
   const formValidation = () => {
-    if (!userName || !userEmail || !userNumber || !userMessage) {
+    if (
+      !userName ||
+      !userEmail ||
+      !userNumber ||
+      !userMessage ||
+      isNaN(+userNumber)
+    ) {
       setFormValid(false);
+      console.log("form not valid: " + formNotValid);
       return;
     }
+    console.log("form not valid: " + formNotValid);
     return true;
+  };
+
+  // TEST
+  const testGo = () => {
+    console.log(
+      "email sent:" + userEmail + userMessage + userName + userNumber
+    );
   };
 
   //SEND EMAIL VIA EMAILJS
   const sendEmail = (e) => {
-    e.preventDefault();
-
     emailjs
       .sendForm(
         "test_account_bowden",
@@ -65,13 +78,38 @@ const Contact = () => {
     e.preventDefault();
     if (formValidation()) {
       setFormValid(true);
+      // sendEmail();
+      testGo();
+      setFormSubmitted(false);
       setUserName("");
       setUserEmail("");
       setUserNumber("");
       setMessage("");
       e.target.reset();
     } else {
+      console.log("submit error");
       return false;
+    }
+  };
+
+  // HANDLE SUBMIT CLICK
+  const submitForm = () => {
+    setFormSubmitted(true);
+  };
+
+  //SHOW ERROR MESSAGE IF INPUT INVALID
+  const errorHandler = (input) => {
+    if (!formSubmitted) {
+      return true;
+    } else if (formSubmitted) {
+      console.log(input);
+      if (input === userNumber && (!input || isNaN(+input))) {
+        return false;
+      } else if (!input) {
+        return false;
+      } else {
+        return true;
+      }
     }
   };
 
@@ -82,23 +120,95 @@ const Contact = () => {
         subheadline={introSubHeadline}
         text={introText}
       />
-      <form ref={form} onSubmit={handleSubmit}>
-        <label htmlFor="userName">Name</label>
-        <input onChange={handleChange} type="text" name="userName" />
-        <label htmlFor="userEmail">Email</label>
-        <input onChange={handleChange} type="email" name="userEmail" />
-        <label htmlFor="userNumber">Contact Number</label>
-        <input onChange={handleChange} type="tel" name="userNumber" />
-        <label htmlFor="userMessage">Message</label>
-        <textarea onChange={handleChange} name="userMessage" />
-        <input type="submit" value="Send" />
+      <form ref={form} onSubmit={handleSubmit} className="contact__form">
+        <div className="contact__box">
+          <label className="contact__label" htmlFor="userName">
+            Name
+          </label>
+          <p
+            className={
+              errorHandler(userName)
+                ? "contact__label--fine"
+                : "contact__label--error"
+            }
+          >
+            Please provide your name
+          </p>
+        </div>
+        <input
+          className="contact__input"
+          onChange={handleChange}
+          type="text"
+          name="userName"
+        />
+        <div className="contact__box">
+          <label className="contact__label" htmlFor="userEmail">
+            Email
+          </label>
+          <p
+            className={
+              errorHandler(userEmail)
+                ? "contact__label--fine"
+                : "contact__label--error"
+            }
+          >
+            Please provide your email address
+          </p>
+        </div>
+        <input
+          className="contact__input"
+          onChange={handleChange}
+          type="email"
+          name="userEmail"
+        />
+        <div className="contact__box">
+          <label className="contact__label" htmlFor="userNumber">
+            Contact Number
+          </label>
+          <p
+            className={
+              errorHandler(userNumber)
+                ? "contact__label--fine"
+                : "contact__label--error"
+            }
+          >
+            Please provide a valid contact number
+          </p>
+        </div>
+        <input
+          className="contact__input"
+          onChange={handleChange}
+          type="tel"
+          name="userNumber"
+        />
+        <div className="contact__box">
+          <label className="contact__label" htmlFor="userMessage">
+            Message
+          </label>
+          <p
+            className={
+              errorHandler(userMessage)
+                ? "contact__label--fine"
+                : "contact__label--error"
+            }
+          >
+            Please include a message
+          </p>
+        </div>
+        <textarea
+          className="contact__input"
+          onChange={handleChange}
+          name="userMessage"
+        />
+        <input
+          className="contact__send"
+          type="submit"
+          value="Send Enquiry"
+          onClick={submitForm}
+        />
       </form>
     </div>
   );
 };
 
 export default Contact;
-
-// CSS for form
-// add in form validation
-// add in form clearing on submit/message
