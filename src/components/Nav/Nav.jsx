@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import "./nav.scss";
 import bowdenLogo from "../../assets/logo/logo.png";
 
+// INVESTIGATE --- https://www.npmjs.com/package/react-burger-menu
+
 export const Nav = () => {
   return (
     <>

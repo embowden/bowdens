@@ -11,27 +11,27 @@ const Footer = () => {
       <div className="footer__divider"></div>
       <footer className="footer">
         <div className="footer__socials">
-          <Link to="https://www.facebook.com">
+          <a href="https://www.facebook.com" target="_blank">
             <img
               src={facebookIcon}
               alt="facebook icon"
               className="footer__icon"
             />
-          </Link>
-          <Link to="https://www.instagram.com">
+          </a>
+          <a href="https://www.instagram.com" target="_blank">
             <img
               src={instagramIcon}
               alt="instagram icon"
               className="footer__icon"
             />
-          </Link>
-          <Link to="https://www.youtube.com">
+          </a>
+          <a href="https://www.youtube.com" target="_blank">
             <img
               src={youtubeIcon}
               alt="youtube icon"
               className="footer__icon"
             />
-          </Link>
+          </a>
         </div>
         <div className="footer__address">
           Bowdens Registered Office, 2nd Floor Diamond Building, 100-102 Great

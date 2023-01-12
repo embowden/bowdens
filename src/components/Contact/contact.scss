@@ -23,25 +23,28 @@
     }
 
     &--error {
-      font-size: 10px;
+      padding-bottom: 2px;
+      display: flex;
+      align-items: flex-end;
+      font-size: 8px;
       color: red;
     }
   }
 
   &__input {
-    border-radius: 5px;
     border-width: 1px;
     padding: 3px;
     margin-bottom: 10px;
   }
 
   &__send {
-    text-transform: uppercase;
-    font-weight: bold;
+    background-color: lightgray;
+    border: none;
+    font-style: italic;
     font-size: 12px;
     margin-top: 10px;
     align-self: center;
-    width: 40%;
+    width: 50%;
     height: 30px;
   }
 }
