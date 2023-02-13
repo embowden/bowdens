@@ -10,3 +10,6 @@ https://github.com/thebuilder/react-intersection-observer
 
 https://www.youtube.com/watch?v=r1auJEf9ISo
 
+UNINSTALL a bunch of crap
+
+SCROLL - https://github.com/michalsnik/aos
