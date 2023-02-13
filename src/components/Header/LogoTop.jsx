@@ -5,9 +5,9 @@ import bowdenLogo from "../../assets/logo/logo.png";
 export const LogoTop = () => {
   return (
     <>
-      <div className="logoTop">
+      <a className="logoTop">
         <img src={bowdenLogo} alt="Bowdens Logo" className="logoTop__logo" />
-      </div>
+      </a>
     </>
   );
 };

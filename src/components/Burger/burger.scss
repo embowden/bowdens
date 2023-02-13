@@ -3,13 +3,14 @@
   position: fixed;
   width: 36px;
   height: 30px;
-  left: 36px;
-  top: 36px;
+  left: 23px;
+  top: 23px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  // background: #373a47;
+  background: lightgray;
 }
 
 /* Color/shape of burger icon bars on hover*/
@@ -25,7 +26,7 @@
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: white;
 }
 
 /*
@@ -35,12 +36,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
+  border-right: 1.5px solid grey;
 }
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
-  padding: 2.5em 1.5em 0;
+  background: black;
+  padding: 2.5em 1em 0;
   font-size: 1.15em;
 }
 
@@ -58,9 +60,20 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
   display: inline-block;
+  color: white;
+  padding-bottom: 5px;
 }
 
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+.bm-logo {
+  filter: invert(100%);
+  height: auto;
+  width: 120px;
+  padding-bottom: 20px;
+  right: 6px;
+  position: relative;
 }
