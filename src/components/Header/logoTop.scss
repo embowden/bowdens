@@ -1,0 +1,14 @@
+.logoTop {
+  font-size: 12px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__logo {
+    filter: invert(100%);
+    padding: 10px 0;
+    height: 50%;
+    width: 50%;
+  }
+}
