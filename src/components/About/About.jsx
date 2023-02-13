@@ -5,8 +5,20 @@ import Crafting from "../../assets/images/crafting.jpg";
 import CraftingTwo from "../../assets/images/crafting2.jpg";
 import Diamond from "../../assets/images/pear.jpg";
 import "./about.scss";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const About = () => {
+  AOS.init({
+    offset: 100,
+    delay: 0,
+    duration: 500,
+    easing: "ease",
+    once: true,
+    anchorPlacement: "top",
+    throttleDelay: 99,
+  });
+  //
   // CARD 1
   const cardOneHeadline = "Family Run Business";
   const cardOneSubHeadline = "Shiny. Sparkly. Bling.";
@@ -27,20 +39,30 @@ export const About = () => {
 
   return (
     <div className="about">
-      <Card
-        headline={cardOneHeadline}
-        subheadline={cardOneSubHeadline}
-        text={cardOneText}
-        weight="big"
+      <div data-aos="fade-up">
+        <Card
+          headline={cardOneHeadline}
+          subheadline={cardOneSubHeadline}
+          text={cardOneText}
+          weight="big"
+        />
+      </div>
+      <img
+        className="about__family"
+        src={FamilyPic}
+        alt=""
+        data-aos="fade-up"
       />
-      <img className="about__family" src={FamilyPic} alt="" />
-      <Card
-        headline={cardTwoHeadline}
-        subheadline={cardTwoSubHeadline}
-        text={cardTwoText}
-        weight="small"
-      />
-      <div className="about__container">
+      <div />
+      <div data-aos="fade-up">
+        <Card
+          headline={cardTwoHeadline}
+          subheadline={cardTwoSubHeadline}
+          text={cardTwoText}
+          weight="small"
+        />
+      </div>
+      <div className="about__container" data-aos="fade-up">
         <div className="about__left">
           <img src={Crafting} alt="" className="about__left-image" />
         </div>
@@ -48,19 +70,23 @@ export const About = () => {
           <img src={CraftingTwo} alt="" className="about__right-image" />
         </div>
       </div>
-      <Card
-        headline={cardThreeHeadline}
-        subheadline={cardThreeSubHeadline}
-        text={cardThreeText}
-        weight="small"
-      />
-      <img className="about__diamond" src={Diamond} alt="" />
-      <Card
-        headline={cardThreeHeadline}
-        subheadline={cardThreeSubHeadline}
-        text={cardThreeText}
-        weight="small"
-      />
+      <div data-aos="fade-up">
+        <Card
+          headline={cardThreeHeadline}
+          subheadline={cardThreeSubHeadline}
+          text={cardThreeText}
+          weight="small"
+        />
+      </div>
+      <img className="about__diamond" src={Diamond} alt="" data-aos="fade-up" />
+      <div data-aos="fade-up">
+        <Card
+          headline={cardThreeHeadline}
+          subheadline={cardThreeSubHeadline}
+          text={cardThreeText}
+          weight="small"
+        />
+      </div>
     </div>
   );
 };
