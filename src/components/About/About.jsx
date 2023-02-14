@@ -9,6 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export const About = () => {
+  // Scroll animation
   AOS.init({
     offset: 100,
     delay: 0,
@@ -18,7 +19,7 @@ export const About = () => {
     anchorPlacement: "top",
     throttleDelay: 99,
   });
-  //
+
   // CARD 1
   const cardOneHeadline = "Family Run Business";
   const cardOneSubHeadline = "Shiny. Sparkly. Bling.";
@@ -39,7 +40,7 @@ export const About = () => {
 
   return (
     <div className="about">
-      <div data-aos="fade-up">
+      <div data-aos="fade-right">
         <Card
           headline={cardOneHeadline}
           subheadline={cardOneSubHeadline}
@@ -51,10 +52,10 @@ export const About = () => {
         className="about__family"
         src={FamilyPic}
         alt=""
-        data-aos="fade-up"
+        data-aos="fade-left"
       />
       <div />
-      <div data-aos="fade-up">
+      <div data-aos="fade-right">
         <Card
           headline={cardTwoHeadline}
           subheadline={cardTwoSubHeadline}
@@ -62,7 +63,7 @@ export const About = () => {
           weight="small"
         />
       </div>
-      <div className="about__container" data-aos="fade-up">
+      <div className="about__container" data-aos="fade-left">
         <div className="about__left">
           <img src={Crafting} alt="" className="about__left-image" />
         </div>
@@ -70,7 +71,7 @@ export const About = () => {
           <img src={CraftingTwo} alt="" className="about__right-image" />
         </div>
       </div>
-      <div data-aos="fade-up">
+      <div data-aos="fade-right">
         <Card
           headline={cardThreeHeadline}
           subheadline={cardThreeSubHeadline}
@@ -78,8 +79,13 @@ export const About = () => {
           weight="small"
         />
       </div>
-      <img className="about__diamond" src={Diamond} alt="" data-aos="fade-up" />
-      <div data-aos="fade-up">
+      <img
+        className="about__diamond"
+        src={Diamond}
+        alt=""
+        data-aos="fade-left"
+      />
+      <div data-aos="fade-right">
         <Card
           headline={cardThreeHeadline}
           subheadline={cardThreeSubHeadline}

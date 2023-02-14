@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
 import Card from "../Card/Card";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Contact = () => {
   const [formNotValid, setFormValid] = useState(true);
@@ -11,6 +13,18 @@ const Contact = () => {
   const [userMessage, setMessage] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
 
+  // Scroll animation
+  AOS.init({
+    offset: 100,
+    delay: 0,
+    duration: 500,
+    easing: "ease",
+    once: true,
+    anchorPlacement: "top",
+    throttleDelay: 99,
+  });
+
+  // Intro information
   const introHeadline = "Enquiry Form";
   const introSubHeadline = "Design your Dreams";
   const introText =
@@ -115,13 +129,20 @@ const Contact = () => {
 
   return (
     <div className="contact">
-      <Card
-        headline={introHeadline}
-        subheadline={introSubHeadline}
-        text={introText}
-        weight="big"
-      />
-      <form ref={form} onSubmit={handleSubmit} className="contact__form">
+      <div data-aos="fade-right">
+        <Card
+          headline={introHeadline}
+          subheadline={introSubHeadline}
+          text={introText}
+          weight="big"
+        />
+      </div>
+      <form
+        ref={form}
+        onSubmit={handleSubmit}
+        className="contact__form"
+        data-aos="fade-left"
+      >
         <div className="contact__box">
           <label className="contact__label" htmlFor="userName">
             Name

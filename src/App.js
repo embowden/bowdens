@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.scss";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Gallery from "./components/Gallery/Gallery";
@@ -16,6 +17,7 @@ function App() {
         <div>
           <Burger />
           <LogoTop />
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="about" element={<About />} />

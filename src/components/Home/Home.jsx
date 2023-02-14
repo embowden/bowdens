@@ -5,8 +5,22 @@ import posterImage from "../../assets/images/hand.jpg";
 import reviewImage from "../../assets/images/necklace.jpg";
 import leftImage from "../../assets/images/earrings.jpg";
 import rightImage from "../../assets/images/bespoke.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Home = () => {
+  // Scroll animation
+  AOS.init({
+    offset: 100,
+    delay: 0,
+    duration: 500,
+    easing: "ease",
+    once: true,
+    anchorPlacement: "top",
+    throttleDelay: 99,
+  });
+
+  //
   const posterHeadline = "Lab-Grown Diamonds";
   const posterSubHeadline = "Modern. Ethical. Conscious. Empowering.";
   const introHeadline = "welcome to";
@@ -27,7 +41,7 @@ export const Home = () => {
   return (
     <>
       {/* POSTER */}
-      <section className="home__poster">
+      <section className="home__poster" data-aos="fade-down">
         <img src={posterImage} alt="" className="home__poster-image" />
         <div className="home__poster-text">
           <p className="home__poster-headline">{posterHeadline}</p>
@@ -38,7 +52,7 @@ export const Home = () => {
         </div>
       </section>
       {/* INTRODUCTION */}
-      <section className="home__intro">
+      <section className="home__intro" data-aos="fade-right">
         <div className="home__intro-container">
           <p className="home__intro-welcome">{introHeadline}</p>
           <p className="home__intro-company">{introSubHeadline}</p>
@@ -49,7 +63,7 @@ export const Home = () => {
         </NavLink>
       </section>
       {/* REVIEWS */}
-      <section className="home__article">
+      <section className="home__article" data-aos="fade-left">
         <img src={reviewImage} alt="" className="home__article-image" />
         <div className="home__article-container">
           <p className="home__article-header">{reviewHeadline}</p>
@@ -59,7 +73,7 @@ export const Home = () => {
         </div>
       </section>
       {/* CTA SQUARES */}
-      <section className="home__squares">
+      <section className="home__squares" data-aos="fade-right">
         <div className="home__left-square">
           <img src={leftImage} alt="" className="home__left-image" />
           <NavLink to="/gallery" className="home__left-link">
@@ -74,7 +88,7 @@ export const Home = () => {
         </div>
       </section>
       {/* NEXT SECTION */}
-      <section className="home__article">
+      <section className="home__article" data-aos="fade-left">
         <div className="home__article-container">
           <p className="home__article-header">{lastHeadline}</p>
           <p className="home__article-subheader">{lastSubHeadline}</p>
