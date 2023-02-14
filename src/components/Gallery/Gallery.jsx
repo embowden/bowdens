@@ -40,7 +40,7 @@ const Gallery = () => {
           weight="big"
         />
       </div>
-      <div data-aos="fade-left">
+      <div data-aos="fade-left" className="gallery__carousel">
         <Caro />
       </div>
       <div data-aos="fade-right">

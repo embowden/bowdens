@@ -35,6 +35,10 @@
     border-width: 1px;
     padding: 3px;
     margin-bottom: 10px;
+
+    &--textarea {
+      height: 30vh;
+    }
   }
 
   &__send {
@@ -42,9 +46,9 @@
     border: none;
     font-style: italic;
     font-size: 12px;
-    margin-top: 10px;
+    margin-top: 20px;
     align-self: center;
-    width: 50%;
+    width: 165px;
     height: 30px;
   }
 }

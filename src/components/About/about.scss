@@ -1,45 +1,48 @@
 .about {
+  // transition: margin 1s ease;
+
   &__family {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    background: center/cover url("../../assets/images/family.jpg");
   }
 
   &__container {
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    height: 150px;
+    height: calc(100vw / 2);
+    max-height: 60vh;
   }
 
   &__left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    overflow: hidden;
     width: 50%;
-  }
-
-  &__left-image {
-    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    background: center/cover url("../../assets/images/crafting.jpg");
   }
 
   &__right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
     width: 50%;
-  }
-
-  &__right-image {
-    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    background: center/cover url("../../assets/images/crafting2.jpg");
   }
 
   &__diamond {
-    height: 100%;
-    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    background: center/cover url("../../assets/images/pear.jpg");
   }
 }

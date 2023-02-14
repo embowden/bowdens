@@ -218,7 +218,7 @@ const Contact = () => {
           </p>
         </div>
         <textarea
-          className="contact__input"
+          className="contact__input--textarea"
           onChange={handleChange}
           name="userMessage"
         />

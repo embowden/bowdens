@@ -1,9 +1,5 @@
 import React from "react";
 import Card from "../Card/Card";
-import FamilyPic from "../../assets/images/family.jpg";
-import Crafting from "../../assets/images/crafting.jpg";
-import CraftingTwo from "../../assets/images/crafting2.jpg";
-import Diamond from "../../assets/images/pear.jpg";
 import "./about.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -48,12 +44,7 @@ export const About = () => {
           weight="big"
         />
       </div>
-      <img
-        className="about__family"
-        src={FamilyPic}
-        alt=""
-        data-aos="fade-left"
-      />
+      <div className="about__family" data-aos="fade-left"></div>
       <div />
       <div data-aos="fade-right">
         <Card
@@ -64,12 +55,8 @@ export const About = () => {
         />
       </div>
       <div className="about__container" data-aos="fade-left">
-        <div className="about__left">
-          <img src={Crafting} alt="" className="about__left-image" />
-        </div>
-        <div className="about__right">
-          <img src={CraftingTwo} alt="" className="about__right-image" />
-        </div>
+        <div className="about__left"></div>
+        <div className="about__right"></div>
       </div>
       <div data-aos="fade-right">
         <Card
@@ -79,12 +66,7 @@ export const About = () => {
           weight="small"
         />
       </div>
-      <img
-        className="about__diamond"
-        src={Diamond}
-        alt=""
-        data-aos="fade-left"
-      />
+      <div className="about__diamond" data-aos="fade-left"></div>
       <div data-aos="fade-right">
         <Card
           headline={cardThreeHeadline}

@@ -1,6 +1,8 @@
 .caro {
   background-color: grey;
   padding: 30px;
+  min-width: 320px;
+  width: calc(100vw - 50%);
 
   &__title {
     font-weight: bold;
