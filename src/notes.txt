@@ -1,5 +1,3 @@
-MAKE LOGO A LINK BACK TO HOME PAGE
-
 https://react-scroll-parallax.damnthat.tv/docs/examples/how-it-works <-- have a look 
 
 https://dev.to/jslim/fading-up-sections-using-intersection-observer-3fhj

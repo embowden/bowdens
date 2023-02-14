@@ -42,7 +42,6 @@ export const Home = () => {
     <>
       {/* POSTER */}
       <section className="home__poster" data-aos="fade-down">
-        <img src={posterImage} alt="" className="home__poster-image" />
         <div className="home__poster-text">
           <p className="home__poster-headline">{posterHeadline}</p>
           <p className="home__poster-subheadline">{posterSubHeadline}</p>
@@ -64,7 +63,7 @@ export const Home = () => {
       </section>
       {/* REVIEWS */}
       <section className="home__article" data-aos="fade-left">
-        <img src={reviewImage} alt="" className="home__article-image" />
+        <div className="home__article-image"></div>
         <div className="home__article-container">
           <p className="home__article-header">{reviewHeadline}</p>
           <p className="home__article-subheader">{reviewSubHeadline}</p>

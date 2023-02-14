@@ -1,13 +1,16 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./logoTop.scss";
 import bowdenLogo from "../../assets/logo/logo.png";
 
 export const LogoTop = () => {
   return (
     <>
-      <a className="logoTop">
-        <img src={bowdenLogo} alt="Bowdens Logo" className="logoTop__logo" />
-      </a>
+      <div className="logoTop">
+        <NavLink to="/" className="logoTop__link">
+          <img src={bowdenLogo} alt="Bowdens Logo" className="logoTop__logo" />
+        </NavLink>
+      </div>
     </>
   );
 };

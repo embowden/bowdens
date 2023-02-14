@@ -1,13 +1,16 @@
 @use "./styles/partials/breakpoints";
-// @use "./styles/partials/mixins";
 @use "./styles/partials/resets";
-// @use "./styles/partials/typography";
-// @use "./styles/partials/variables";
-// @use "./styles/partials/wrapper";
 
 .app {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 120px; /* height of your footer */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

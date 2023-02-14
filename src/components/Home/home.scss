@@ -4,14 +4,12 @@
   align-items: center;
 
   &__poster {
+    height: 50vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
     position: relative;
-  }
-
-  &__poster-image {
-    height: 100%;
-    width: 100%;
+    background: center/cover url("../../assets/images/hand.jpg");
   }
 
   &__poster-text {
@@ -21,7 +19,7 @@
     align-items: center;
     width: 100%;
     position: absolute;
-    top: 55%;
+    top: 57%;
   }
 
   &__poster-headline {
@@ -89,7 +87,12 @@
   }
 
   &__article-image {
-    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    background: center/cover url("../../assets/images/necklace.jpg");
   }
 
   &__article-container {

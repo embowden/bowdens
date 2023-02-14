@@ -14,10 +14,10 @@ function App() {
   return (
     <>
       <div className="app">
+        <ScrollToTop />
         <div>
           <Burger />
           <LogoTop />
-          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="about" element={<About />} />
@@ -25,7 +25,9 @@ function App() {
             <Route path="contact" element={<Contact />} />
           </Routes>
         </div>
-        <Footer />
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     </>
   );
