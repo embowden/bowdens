@@ -51,7 +51,7 @@ export const Home = () => {
         </div>
       </section>
       {/* INTRODUCTION */}
-      <section className="home__intro" data-aos="fade-right">
+      <section className="home__intro wrapper" data-aos="fade-right">
         <div className="home__intro-container">
           <p className="home__intro-welcome">{introHeadline}</p>
           <p className="home__intro-company">{introSubHeadline}</p>
@@ -64,7 +64,7 @@ export const Home = () => {
       {/* REVIEWS */}
       <section className="home__article" data-aos="fade-left">
         <div className="home__article-image"></div>
-        <div className="home__article-container">
+        <div className="home__article-container wrapper">
           <p className="home__article-header">{reviewHeadline}</p>
           <p className="home__article-subheader">{reviewSubHeadline}</p>
           <p className="home__article-text">{reviewText}</p>
@@ -88,7 +88,7 @@ export const Home = () => {
       </section>
       {/* NEXT SECTION */}
       <section className="home__article" data-aos="fade-left">
-        <div className="home__article-container">
+        <div className="home__article-container wrapper">
           <p className="home__article-header">{lastHeadline}</p>
           <p className="home__article-subheader">{lastSubHeadline}</p>
           <p className="home__article-text">{lastText}</p>

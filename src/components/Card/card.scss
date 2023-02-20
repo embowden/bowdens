@@ -1,6 +1,14 @@
+@use "../../styles/partials/breakpoints" as *;
+
 .card {
   display: flex;
   flex-direction: column;
+  @include medium {
+    margin: 0 100px;
+  }
+
+  @include large {
+  }
 
   &__intro {
     padding: 20px 0;

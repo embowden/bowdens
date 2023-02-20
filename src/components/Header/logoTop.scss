@@ -1,3 +1,5 @@
+@use "../../styles/partials/breakpoints" as *;
+
 .logoTop {
   font-size: 12px;
   background-color: black;
@@ -8,6 +10,13 @@
   &__link {
     height: 50%;
     width: 150px;
+
+    @include medium {
+      width: 200px;
+    }
+
+    @include large {
+    }
   }
 
   &__logo {

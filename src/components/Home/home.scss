@@ -1,3 +1,5 @@
+@use "../../styles/partials/breakpoints" as *;
+
 .home {
   display: flex;
   flex-direction: column;
@@ -10,6 +12,12 @@
     flex-direction: row;
     position: relative;
     background: center/cover url("../../assets/images/hand.jpg");
+    @include medium {
+      height: 60vh;
+    }
+
+    @include large {
+    }
   }
 
   &__poster-text {
@@ -20,15 +28,33 @@
     width: 100%;
     position: absolute;
     top: 57%;
+    @include medium {
+      top: 59%;
+    }
+
+    @include large {
+    }
   }
 
   &__poster-headline {
     font-size: 26px;
     padding-bottom: 5px;
+    @include medium {
+      font-size: 30px;
+    }
+
+    @include large {
+    }
   }
 
   &__poster-subheadline {
     padding-bottom: 10px;
+    @include medium {
+      font-size: 20px;
+    }
+
+    @include large {
+    }
   }
 
   &__poster-cta {
@@ -40,6 +66,12 @@
     text-transform: uppercase;
     border: none;
     padding: 6px 10px;
+    @include medium {
+      font-size: 14px;
+    }
+
+    @include large {
+    }
   }
 
   &__intro {
@@ -87,12 +119,19 @@
   }
 
   &__article-image {
-    height: 60vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     flex-direction: row;
     position: relative;
     background: center/cover url("../../assets/images/necklace.jpg");
+
+    @include medium {
+      height: 60vh;
+    }
+
+    @include large {
+    }
   }
 
   &__article-container {
@@ -178,5 +217,14 @@
     font-style: italic;
     border: none;
     padding: 6px 10px;
+  }
+}
+
+.wrapper {
+  @include medium {
+    margin: 0 100px;
+  }
+
+  @include large {
   }
 }
