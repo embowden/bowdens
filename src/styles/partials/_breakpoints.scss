@@ -1,6 +1,7 @@
 /* width variables */
 $mobile-max-width: 767px;
 $tablet-min-width: 768px;
+$laptop-min-width: 1024px;
 $desktop-min-width: 1280px;
 
 /* media query for mobile */
@@ -17,8 +18,15 @@ $desktop-min-width: 1280px;
   }
 }
 
-/* media query for desktop */
+/* media query for laptop */
 @mixin large {
+  @media only screen and (min-width: $laptop-min-width) {
+    @content;
+  }
+}
+
+/* media query for desktop */
+@mixin x-large {
   @media only screen and (min-width: $desktop-min-width) {
     @content;
   }

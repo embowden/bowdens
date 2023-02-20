@@ -8,6 +8,10 @@ https://github.com/thebuilder/react-intersection-observer
 
 https://www.youtube.com/watch?v=r1auJEf9ISo
 
-UNINSTALL a bunch of crap
-
 SCROLL - https://github.com/michalsnik/aos
+
+TO DO LIST: 
+
+*Fix animation on tablet+ home page
+*Fix padding between sections tablet+
+*UNINSTALL a bunch of crap

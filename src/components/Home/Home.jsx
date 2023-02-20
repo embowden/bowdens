@@ -38,6 +38,9 @@ export const Home = () => {
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ducimus quasi sed laborum ipsam tempora tenetur modi sunt? Quia alias doloribus, est nisi debitis neque et dicta maxime ipsam voluptatibus!";
   const lastSmallText = "Lorem Ipsum";
 
+  console.log(window.innerWidth);
+  const screenWidth = window.innerWidth;
+
   return (
     <>
       {/* POSTER */}
@@ -51,34 +54,57 @@ export const Home = () => {
         </div>
       </section>
       {/* INTRODUCTION */}
-      <section className="home__intro wrapper" data-aos="fade-right">
-        <div className="home__intro-container">
-          <p className="home__intro-welcome">{introHeadline}</p>
-          <p className="home__intro-company">{introSubHeadline}</p>
-        </div>
-        <p className="home__intro-blurb">{introBlurb}</p>
-        <NavLink to="/contact" className="home__intro-contact">
-          Get in touch
-        </NavLink>
-      </section>
-      {/* REVIEWS */}
-      <section className="home__article" data-aos="fade-left">
+      <div className="home__intro-wrapper">
+        <section className="home__intro" data-aos="fade-right">
+          <div className="home__intro-container">
+            <p className="home__intro-welcome">{introHeadline}</p>
+            <p className="home__intro-company">{introSubHeadline}</p>
+          </div>
+          <p className="home__intro-blurb">{introBlurb}</p>
+          <NavLink to="/contact" className="home__intro-contact">
+            Get in touch
+          </NavLink>
+        </section>
+        {/* NECKLACE IMAGE */}
         <div className="home__article-image"></div>
-        <div className="home__article-container wrapper">
-          <p className="home__article-header">{reviewHeadline}</p>
-          <p className="home__article-subheader">{reviewSubHeadline}</p>
-          <p className="home__article-text">{reviewText}</p>
-          <p className="home__article-person">{reviewName}</p>
+      </div>
+      {/* REVIEWS */}
+      <div className="home__article-wrapper">
+        <div className={screenWidth >= 768 ? "home__left-image" : "noDisplay"}>
+          <NavLink to="/gallery" className="home__left-link">
+            Visit Gallery
+          </NavLink>
         </div>
-      </section>
+        <section className="home__article" data-aos="fade-left">
+          <div className="home__article-container">
+            <p className="home__article-header">{reviewHeadline}</p>
+            <p className="home__article-subheader">{reviewSubHeadline}</p>
+            <p className="home__article-text">{reviewText}</p>
+            <p className="home__article-person">{reviewName}</p>
+          </div>
+        </section>
+      </div>
       {/* CTA SQUARES */}
       <section className="home__squares" data-aos="fade-right">
-        <div className="home__left-square">
+        {/* IF MOBILE, DISPLAY LEFT SQUARE WITH RIGHT SQUARE */}
+        <div className={screenWidth <= 767 ? "home__left-square" : "noDisplay"}>
           <img src={leftImage} alt="" className="home__left-image" />
           <NavLink to="/gallery" className="home__left-link">
             Visit Gallery
           </NavLink>
         </div>
+        {/* IF TABLET+ DISPLAY TEXT INSTEAD */}
+        <section
+          className={screenWidth >= 768 ? "home__article" : "noDisplay"}
+          data-aos="fade-left"
+        >
+          <div className="home__article-container">
+            <p className="home__article-header">{lastHeadline}</p>
+            <p className="home__article-subheader">{lastSubHeadline}</p>
+            <p className="home__article-text">{lastText}</p>
+            <p className="home__article-person">{lastSmallText}</p>
+          </div>
+        </section>
         <div className="home__right-square">
           <img src={rightImage} alt="" className="home__right-image" />
           <NavLink to="/contact" className="home__right-link">
@@ -87,8 +113,11 @@ export const Home = () => {
         </div>
       </section>
       {/* NEXT SECTION */}
-      <section className="home__article" data-aos="fade-left">
-        <div className="home__article-container wrapper">
+      <section
+        className={screenWidth <= 767 ? "home__article" : "noDisplay"}
+        data-aos="fade-left"
+      >
+        <div className="home__article-container">
           <p className="home__article-header">{lastHeadline}</p>
           <p className="home__article-subheader">{lastSubHeadline}</p>
           <p className="home__article-text">{lastText}</p>
