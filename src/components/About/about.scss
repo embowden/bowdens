@@ -1,5 +1,12 @@
+@use "../../styles/partials/breakpoints" as *;
+// transition: margin 1s ease;
+
 .about {
-  // transition: margin 1s ease;
+  &__padding {
+    @include medium {
+      margin: 0 100px;
+    }
+  }
 
   &__family {
     height: 60vh;
@@ -10,11 +17,38 @@
     background: center/cover url("../../assets/images/family.jpg");
   }
 
+  &__top-medium {
+    @include medium {
+      padding-top: 40px;
+      display: flex;
+    }
+  }
+
+  &__top-medium-card {
+    @include medium {
+      display: flex;
+      width: 50%;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__mid-medium {
+    @include medium {
+      display: flex;
+      padding-top: 40px;
+    }
+  }
+
   &__container {
     display: flex;
     flex-direction: row;
     height: calc(100vw / 2);
     max-height: 60vh;
+    @include medium {
+      width: 50%;
+      height: 60vh;
+    }
   }
 
   &__left {
@@ -25,6 +59,10 @@
     flex-direction: row;
     position: relative;
     background: center/cover url("../../assets/images/crafting.jpg");
+    @include medium {
+      width: 50%;
+      height: 60vh;
+    }
   }
 
   &__right {
@@ -35,6 +73,19 @@
     flex-direction: row;
     position: relative;
     background: center/cover url("../../assets/images/crafting2.jpg");
+    @include medium {
+      height: 60vh;
+      width: 100%;
+    }
+  }
+
+  &__mid-medium-card {
+    @include medium {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__diamond {
@@ -44,5 +95,30 @@
     flex-direction: row;
     position: relative;
     background: center/cover url("../../assets/images/pear.jpg");
+    @include medium {
+      height: 60vh;
+      width: 50%;
+    }
   }
+
+  &__bottom-medium {
+    @include medium {
+      padding: 40px 0;
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  &__bottom-medium-card {
+    @include medium {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+    }
+  }
+}
+
+.noDisplay {
+  display: none;
 }

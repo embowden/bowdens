@@ -53,6 +53,9 @@
     font-weight: bold;
     font-size: 12px;
     padding-bottom: 2px;
+    @include medium {
+      font-size: 14px;
+    }
 
     &--fine {
       display: none;
@@ -86,5 +89,10 @@
     align-self: center;
     width: 165px;
     height: 30px;
+    @include medium {
+      font-size: 14px;
+      width: 180px;
+      height: 40px;
+    }
   }
 }

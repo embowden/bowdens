@@ -40,10 +40,11 @@ export const About = () => {
   const cardThreeSubHeadline = "Shiny. Sparkly. Bling.";
   const cardThreeText =
     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam maxime accusantium aliquid. Harum ipsa tempore architecto. Blanditiis quis dolorem aliquid quas veritatis ipsa fugiat necessitatibus nisi. Incidunt necessitatibus non voluptatem?";
+  const screenWidth = window.innerWidth;
 
   return (
     <div className="about">
-      <div>
+      <div className="about__padding">
         <Card
           headline={cardOneHeadline}
           subheadline={cardOneSubHeadline}
@@ -52,35 +53,48 @@ export const About = () => {
         />
       </div>
       <div className="about__family"></div>
-      <div />
-      <div>
-        <Card
-          headline={cardTwoHeadline}
-          subheadline={cardTwoSubHeadline}
-          text={cardTwoText}
-          weight="small"
-        />
+      <div className="about__top-medium">
+        <div className="about__top-medium-card">
+          <Card
+            headline={cardTwoHeadline}
+            subheadline={cardTwoSubHeadline}
+            text={cardTwoText}
+            weight="small"
+          />
+        </div>
+        <div className={screenWidth >= 768 ? "about__left" : "noDisplay"}></div>
       </div>
-      <div className="about__container">
-        <div className="about__left"></div>
-        <div className="about__right"></div>
+      <div className="about__mid-medium">
+        <div className="about__container">
+          <div
+            className={screenWidth <= 767 ? "about__left" : "noDisplay"}
+          ></div>
+          <div className="about__right"></div>
+        </div>
+        <div className="about__mid-medium-card">
+          <Card
+            headline={cardThreeHeadline}
+            subheadline={cardThreeSubHeadline}
+            text={cardThreeText}
+            weight="small"
+          />
+        </div>
       </div>
-      <div>
-        <Card
-          headline={cardThreeHeadline}
-          subheadline={cardThreeSubHeadline}
-          text={cardThreeText}
-          weight="small"
-        />
-      </div>
-      <div className="about__diamond"></div>
-      <div>
-        <Card
-          headline={cardThreeHeadline}
-          subheadline={cardThreeSubHeadline}
-          text={cardThreeText}
-          weight="small"
-        />
+      <div
+        className={screenWidth <= 767 ? "about__diamond" : "noDisplay"}
+      ></div>
+      <div className="about__bottom-medium">
+        <div className="about__bottom-medium-card">
+          <Card
+            headline={cardThreeHeadline}
+            subheadline={cardThreeSubHeadline}
+            text={cardThreeText}
+            weight="small"
+          />
+        </div>
+        <div
+          className={screenWidth >= 768 ? "about__diamond" : "noDisplay"}
+        ></div>
       </div>
     </div>
   );

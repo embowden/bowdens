@@ -41,8 +41,6 @@ export const Home = () => {
   const lastText =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ducimus quasi sed laborum ipsam tempora tenetur modi sunt? Quia alias doloribus, est nisi debitis neque et dicta maxime ipsam voluptatibus!";
   const lastSmallText = "Lorem Ipsum";
-
-  console.log(window.innerWidth);
   const screenWidth = window.innerWidth;
 
   return (

@@ -28,11 +28,17 @@
     font-weight: bold;
     font-size: 26px;
     padding-bottom: 5px;
+    @include medium {
+      font-size: 30px;
+    }
 
     &--small {
       font-size: 12px;
       font-weight: bold;
       text-transform: uppercase;
+      @include medium {
+        font-size: 14px;
+      }
     }
   }
 
@@ -42,6 +48,9 @@
     font-weight: bold;
     padding-bottom: 10px;
     border-bottom: 1.5px solid lightgray;
+    @include medium {
+      font-size: 20px;
+    }
 
     &--small {
       font-size: 12px;
@@ -49,6 +58,9 @@
       text-transform: uppercase;
       padding-bottom: 10px;
       border-bottom: 1.5px solid lightgray;
+      @include medium {
+        font-size: 14px;
+      }
     }
   }
 
@@ -59,5 +71,8 @@
     padding-right: 30px;
     text-align: center;
     text-align-last: center;
+    @include medium {
+      font-size: 14px;
+    }
   }
 }
