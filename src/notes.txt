@@ -10,8 +10,11 @@ https://www.youtube.com/watch?v=r1auJEf9ISo
 
 SCROLL - https://github.com/michalsnik/aos
 
+HANDLE RESIZE - https://dirask.com/posts/React-rerender-component-on-browser-resize-jEL0Rp
+
+GSAP - https://greensock.com/docs/v3/Installation
+
 TO DO LIST: 
 
-*Fix animation on tablet+ home page
+*Create scroll animations with ScrollTrigger
 *Fix padding between sections tablet+
-*UNINSTALL a bunch of crap

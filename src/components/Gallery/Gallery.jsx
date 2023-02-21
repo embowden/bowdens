@@ -3,19 +3,26 @@ import { Link } from "react-router-dom";
 import Caro from "../Carousel/Carousel";
 import "./gallery.scss";
 import Card from "../Card/Card";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Gallery = () => {
-  // Scroll animation
-  AOS.init({
-    offset: 100,
-    delay: 0,
-    duration: 500,
-    easing: "ease",
-    once: true,
-    anchorPlacement: "top",
-    throttleDelay: 99,
+  // Handle window resize
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+
+  const handleResize = () => {
+    setDimensions({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   });
 
   //CARD 1
@@ -32,7 +39,7 @@ const Gallery = () => {
 
   return (
     <div className="gallery">
-      <div data-aos="fade-right">
+      <div>
         <Card
           headline={introHeadline}
           subheadline={introSubHeadline}
@@ -40,10 +47,10 @@ const Gallery = () => {
           weight="big"
         />
       </div>
-      <div data-aos="fade-left" className="gallery__carousel">
+      <div className="gallery__carousel">
         <Caro />
       </div>
-      <div data-aos="fade-right">
+      <div>
         <Card
           headline={secondHeadline}
           subheadline={

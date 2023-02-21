@@ -1,26 +1,30 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./home.scss";
-import posterImage from "../../assets/images/hand.jpg";
-import reviewImage from "../../assets/images/necklace.jpg";
 import leftImage from "../../assets/images/earrings.jpg";
 import rightImage from "../../assets/images/bespoke.jpg";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export const Home = () => {
-  // Scroll animation
-  AOS.init({
-    offset: 100,
-    delay: 0,
-    duration: 500,
-    easing: "ease",
-    once: true,
-    anchorPlacement: "top",
-    throttleDelay: 99,
+  // Handle window resize
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
   });
 
-  //
+  const handleResize = () => {
+    setDimensions({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+  // Content variables
   const posterHeadline = "Lab-Grown Diamonds";
   const posterSubHeadline = "Modern. Ethical. Conscious. Empowering.";
   const introHeadline = "welcome to";
@@ -44,7 +48,7 @@ export const Home = () => {
   return (
     <>
       {/* POSTER */}
-      <section className="home__poster" data-aos="fade-down">
+      <section className="home__poster">
         <div className="home__poster-text">
           <p className="home__poster-headline">{posterHeadline}</p>
           <p className="home__poster-subheadline">{posterSubHeadline}</p>
@@ -55,7 +59,7 @@ export const Home = () => {
       </section>
       {/* INTRODUCTION */}
       <div className="home__intro-wrapper">
-        <section className="home__intro" data-aos="fade-right">
+        <section className="home__intro">
           <div className="home__intro-container">
             <p className="home__intro-welcome">{introHeadline}</p>
             <p className="home__intro-company">{introSubHeadline}</p>
@@ -75,7 +79,7 @@ export const Home = () => {
             Visit Gallery
           </NavLink>
         </div>
-        <section className="home__article" data-aos="fade-left">
+        <section className="home__article">
           <div className="home__article-container">
             <p className="home__article-header">{reviewHeadline}</p>
             <p className="home__article-subheader">{reviewSubHeadline}</p>
@@ -85,7 +89,7 @@ export const Home = () => {
         </section>
       </div>
       {/* CTA SQUARES */}
-      <section className="home__squares" data-aos="fade-right">
+      <section className="home__squares">
         {/* IF MOBILE, DISPLAY LEFT SQUARE WITH RIGHT SQUARE */}
         <div className={screenWidth <= 767 ? "home__left-square" : "noDisplay"}>
           <img src={leftImage} alt="" className="home__left-image" />
@@ -94,10 +98,7 @@ export const Home = () => {
           </NavLink>
         </div>
         {/* IF TABLET+ DISPLAY TEXT INSTEAD */}
-        <section
-          className={screenWidth >= 768 ? "home__article" : "noDisplay"}
-          data-aos="fade-left"
-        >
+        <section className={screenWidth >= 768 ? "home__article" : "noDisplay"}>
           <div className="home__article-container">
             <p className="home__article-header">{lastHeadline}</p>
             <p className="home__article-subheader">{lastSubHeadline}</p>
@@ -113,10 +114,7 @@ export const Home = () => {
         </div>
       </section>
       {/* NEXT SECTION */}
-      <section
-        className={screenWidth <= 767 ? "home__article" : "noDisplay"}
-        data-aos="fade-left"
-      >
+      <section className={screenWidth <= 767 ? "home__article" : "noDisplay"}>
         <div className="home__article-container">
           <p className="home__article-header">{lastHeadline}</p>
           <p className="home__article-subheader">{lastSubHeadline}</p>

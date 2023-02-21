@@ -1,19 +1,26 @@
 import React from "react";
 import Card from "../Card/Card";
 import "./about.scss";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export const About = () => {
-  // Scroll animation
-  AOS.init({
-    offset: 100,
-    delay: 0,
-    duration: 500,
-    easing: "ease",
-    once: true,
-    anchorPlacement: "top",
-    throttleDelay: 99,
+  // Handle window resize
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+
+  const handleResize = () => {
+    setDimensions({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   });
 
   // CARD 1
@@ -36,7 +43,7 @@ export const About = () => {
 
   return (
     <div className="about">
-      <div data-aos="fade-right">
+      <div>
         <Card
           headline={cardOneHeadline}
           subheadline={cardOneSubHeadline}
@@ -44,9 +51,9 @@ export const About = () => {
           weight="big"
         />
       </div>
-      <div className="about__family" data-aos="fade-left"></div>
+      <div className="about__family"></div>
       <div />
-      <div data-aos="fade-right">
+      <div>
         <Card
           headline={cardTwoHeadline}
           subheadline={cardTwoSubHeadline}
@@ -54,11 +61,11 @@ export const About = () => {
           weight="small"
         />
       </div>
-      <div className="about__container" data-aos="fade-left">
+      <div className="about__container">
         <div className="about__left"></div>
         <div className="about__right"></div>
       </div>
-      <div data-aos="fade-right">
+      <div>
         <Card
           headline={cardThreeHeadline}
           subheadline={cardThreeSubHeadline}
@@ -66,8 +73,8 @@ export const About = () => {
           weight="small"
         />
       </div>
-      <div className="about__diamond" data-aos="fade-left"></div>
-      <div data-aos="fade-right">
+      <div className="about__diamond"></div>
+      <div>
         <Card
           headline={cardThreeHeadline}
           subheadline={cardThreeSubHeadline}

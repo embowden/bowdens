@@ -2,8 +2,6 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
 import Card from "../Card/Card";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Contact = () => {
   const [formNotValid, setFormValid] = useState(true);
@@ -13,15 +11,24 @@ const Contact = () => {
   const [userMessage, setMessage] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  // Scroll animation
-  AOS.init({
-    offset: 100,
-    delay: 0,
-    duration: 500,
-    easing: "ease",
-    once: true,
-    anchorPlacement: "top",
-    throttleDelay: 99,
+  // Handle window resize
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+
+  const handleResize = () => {
+    setDimensions({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   });
 
   // Intro information
@@ -129,106 +136,106 @@ const Contact = () => {
 
   return (
     <div className="contact">
-      <div data-aos="fade-right">
-        <Card
-          headline={introHeadline}
-          subheadline={introSubHeadline}
-          text={introText}
-          weight="big"
-        />
+      <div className="contact__left">
+        <div>
+          <Card
+            headline={introHeadline}
+            subheadline={introSubHeadline}
+            text={introText}
+            weight="big"
+          />
+        </div>
+        <form ref={form} onSubmit={handleSubmit} className="contact__form">
+          <div className="contact__box">
+            <label className="contact__label" htmlFor="userName">
+              Name
+            </label>
+            <p
+              className={
+                errorHandler(userName)
+                  ? "contact__label--fine"
+                  : "contact__label--error"
+              }
+            >
+              Please provide your name
+            </p>
+          </div>
+          <input
+            className="contact__input"
+            onChange={handleChange}
+            type="text"
+            name="userName"
+          />
+          <div className="contact__box">
+            <label className="contact__label" htmlFor="userEmail">
+              Email
+            </label>
+            <p
+              className={
+                errorHandler(userEmail)
+                  ? "contact__label--fine"
+                  : "contact__label--error"
+              }
+            >
+              Please provide your email address
+            </p>
+          </div>
+          <input
+            className="contact__input"
+            onChange={handleChange}
+            type="email"
+            name="userEmail"
+          />
+          <div className="contact__box">
+            <label className="contact__label" htmlFor="userNumber">
+              Contact Number
+            </label>
+            <p
+              className={
+                errorHandler(userNumber)
+                  ? "contact__label--fine"
+                  : "contact__label--error"
+              }
+            >
+              Please provide a valid contact number
+            </p>
+          </div>
+          <input
+            className="contact__input"
+            onChange={handleChange}
+            type="tel"
+            name="userNumber"
+          />
+          <div className="contact__box">
+            <label className="contact__label" htmlFor="userMessage">
+              Message
+            </label>
+            <p
+              className={
+                errorHandler(userMessage)
+                  ? "contact__label--fine"
+                  : "contact__label--error"
+              }
+            >
+              Please include a message
+            </p>
+          </div>
+          <textarea
+            className="contact__input--textarea"
+            onChange={handleChange}
+            name="userMessage"
+          />
+          <input
+            className="contact__send"
+            type="submit"
+            value="Send Enquiry"
+            onClick={submitForm}
+          />
+        </form>
       </div>
-      <form
-        ref={form}
-        onSubmit={handleSubmit}
-        className="contact__form"
-        data-aos="fade-left"
-      >
-        <div className="contact__box">
-          <label className="contact__label" htmlFor="userName">
-            Name
-          </label>
-          <p
-            className={
-              errorHandler(userName)
-                ? "contact__label--fine"
-                : "contact__label--error"
-            }
-          >
-            Please provide your name
-          </p>
-        </div>
-        <input
-          className="contact__input"
-          onChange={handleChange}
-          type="text"
-          name="userName"
-        />
-        <div className="contact__box">
-          <label className="contact__label" htmlFor="userEmail">
-            Email
-          </label>
-          <p
-            className={
-              errorHandler(userEmail)
-                ? "contact__label--fine"
-                : "contact__label--error"
-            }
-          >
-            Please provide your email address
-          </p>
-        </div>
-        <input
-          className="contact__input"
-          onChange={handleChange}
-          type="email"
-          name="userEmail"
-        />
-        <div className="contact__box">
-          <label className="contact__label" htmlFor="userNumber">
-            Contact Number
-          </label>
-          <p
-            className={
-              errorHandler(userNumber)
-                ? "contact__label--fine"
-                : "contact__label--error"
-            }
-          >
-            Please provide a valid contact number
-          </p>
-        </div>
-        <input
-          className="contact__input"
-          onChange={handleChange}
-          type="tel"
-          name="userNumber"
-        />
-        <div className="contact__box">
-          <label className="contact__label" htmlFor="userMessage">
-            Message
-          </label>
-          <p
-            className={
-              errorHandler(userMessage)
-                ? "contact__label--fine"
-                : "contact__label--error"
-            }
-          >
-            Please include a message
-          </p>
-        </div>
-        <textarea
-          className="contact__input--textarea"
-          onChange={handleChange}
-          name="userMessage"
-        />
-        <input
-          className="contact__send"
-          type="submit"
-          value="Send Enquiry"
-          onClick={submitForm}
-        />
-      </form>
+      <div className="contact__right">
+        <div className="contact__right-image"></div>
+      </div>
     </div>
   );
 };
