@@ -39,7 +39,7 @@ const Gallery = () => {
 
   return (
     <div className="gallery">
-      <div>
+      <div className="gallery__padding">
         <Card
           headline={introHeadline}
           subheadline={introSubHeadline}
@@ -47,20 +47,24 @@ const Gallery = () => {
           weight="big"
         />
       </div>
-      <div className="gallery__carousel">
-        <Caro />
-      </div>
-      <div>
-        <Card
-          headline={secondHeadline}
-          subheadline={
-            <Link to="/contact" className="gallery__link">
-              {secondSubHeadline}
-            </Link>
-          }
-          text={secondText}
-          weight="big"
-        />
+      <div className="gallery__medium">
+        <div className="gallery__carousel">
+          <Caro />
+        </div>
+        <div className="gallery__medium-card">
+          <div className="gallery__medium-card-box">
+            <Card
+              headline={secondHeadline}
+              subheadline={
+                <Link to="/contact" className="gallery__link">
+                  {secondSubHeadline}
+                </Link>
+              }
+              text={secondText}
+              weight="big"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,14 @@
+@use "../../styles/partials/breakpoints" as *;
+
 .caro {
   background-color: grey;
   padding: 30px;
   min-width: 320px;
   width: calc(100vw - 50%);
+  @include medium {
+    width: 75%;
+    padding: 30px 10px;
+  }
 
   &__title {
     font-weight: bold;
