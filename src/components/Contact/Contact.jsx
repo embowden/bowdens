@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
 import Card from "../Card/Card";
-import { inView, animate, timeline } from "motion";
+import { inView, animate } from "motion";
 
 const Contact = () => {
   const [formNotValid, setFormValid] = useState(true);
@@ -26,6 +26,7 @@ const Contact = () => {
   };
 
   useEffect(() => {
+    // play();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -137,24 +138,22 @@ const Contact = () => {
     }
   };
 
-  //ANIMATION
+  // ANIMATION
   useEffect(() => {
     play();
   }, []);
 
   const play = () => {
-    inView(".test__class", () => {
+    inView(".opacityZero", () => {
       console.log("Element has entered");
-      animate(".test__class", { opacity: 1 }, { duration: 2 });
+      animate(".opacityZero", { opacity: 1 }, { duration: 2 });
     });
   };
-
-  // window.location.reload();
 
   return (
     <div className="contact">
       <div className="contact__left">
-        <div className="test__class">
+        <div className="opacityZero">
           <Card
             headline={introHeadline}
             subheadline={introSubHeadline}
@@ -162,7 +161,11 @@ const Contact = () => {
             weight="big"
           />
         </div>
-        <form ref={form} onSubmit={handleSubmit} className="contact__form">
+        <form
+          ref={form}
+          onSubmit={handleSubmit}
+          className="contact__form opacityZero"
+        >
           <div className="contact__box">
             <label className="contact__label" htmlFor="userName">
               Name
@@ -251,7 +254,7 @@ const Contact = () => {
         </form>
       </div>
       <div className="contact__right">
-        <div className="contact__right-image"></div>
+        <div className="contact__right-image opacityZero"></div>
       </div>
     </div>
   );

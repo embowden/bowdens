@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./home.scss";
 import leftImage from "../../assets/images/earrings.jpg";
 import rightImage from "../../assets/images/bespoke.jpg";
+import { inView, animate } from "motion";
 
 export const Home = () => {
   // Handle window resize
@@ -18,12 +19,13 @@ export const Home = () => {
     });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   });
+
   // Content variables
   const posterHeadline = "Lab-Grown Diamonds";
   const posterSubHeadline = "Modern. Ethical. Conscious. Empowering.";
@@ -43,10 +45,22 @@ export const Home = () => {
   const lastSmallText = "Lorem Ipsum";
   const screenWidth = window.innerWidth;
 
+  // ANIMATION
+  useEffect(() => {
+    play();
+  }, []);
+
+  const play = () => {
+    inView(".opacityZero", () => {
+      console.log("Element has entered");
+      animate(".opacityZero", { opacity: 1 }, { duration: 2 }, { delay: 0.5 });
+    });
+  };
+
   return (
     <>
       {/* POSTER */}
-      <section className="home__poster">
+      <section className="home__poster opacityZero">
         <div className="home__poster-text">
           <p className="home__poster-headline">{posterHeadline}</p>
           <p className="home__poster-subheadline">{posterSubHeadline}</p>
@@ -57,7 +71,7 @@ export const Home = () => {
       </section>
       {/* INTRODUCTION */}
       <div className="home__intro-wrapper">
-        <section className="home__intro">
+        <section className="home__intro opacityZero">
           <div className="home__intro-container">
             <p className="home__intro-welcome">{introHeadline}</p>
             <p className="home__intro-company">{introSubHeadline}</p>
@@ -68,16 +82,20 @@ export const Home = () => {
           </NavLink>
         </section>
         {/* NECKLACE IMAGE */}
-        <div className="home__article-image"></div>
+        <div className="home__article-image opacityZero"></div>
       </div>
       {/* REVIEWS */}
       <div className="home__article-wrapper">
-        <div className={screenWidth >= 768 ? "home__left-image" : "noDisplay"}>
+        <div
+          className={
+            screenWidth >= 768 ? "home__left-image opacityZero" : "noDisplay"
+          }
+        >
           <NavLink to="/gallery" className="home__left-link">
             Visit Gallery
           </NavLink>
         </div>
-        <section className="home__article">
+        <section className="home__article opacityZero">
           <div className="home__article-container">
             <p className="home__article-header">{reviewHeadline}</p>
             <p className="home__article-subheader">{reviewSubHeadline}</p>
@@ -104,7 +122,7 @@ export const Home = () => {
             <p className="home__article-person">{lastSmallText}</p>
           </div>
         </section>
-        <div className="home__right-square">
+        <div className="home__right-square opacityZero">
           <img src={rightImage} alt="" className="home__right-image" />
           <NavLink to="/contact" className="home__right-link">
             Bespoke Enquiries
