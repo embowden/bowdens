@@ -81,6 +81,7 @@
   }
 
   &__send {
+    opacity: 1;
     background-color: lightgray;
     border: none;
     font-style: italic;
@@ -95,4 +96,8 @@
       height: 40px;
     }
   }
+}
+
+.test__class {
+  opacity: 0;
 }

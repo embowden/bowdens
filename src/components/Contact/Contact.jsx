@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
 import Card from "../Card/Card";
+import { inView, animate, timeline } from "motion";
 
 const Contact = () => {
   const [formNotValid, setFormValid] = useState(true);
@@ -24,12 +25,14 @@ const Contact = () => {
     });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   });
+
+  console.log("rerender?");
 
   // Intro information
   const introHeadline = "Enquiry Form";
@@ -134,10 +137,24 @@ const Contact = () => {
     }
   };
 
+  //ANIMATION
+  useEffect(() => {
+    play();
+  }, []);
+
+  const play = () => {
+    inView(".test__class", () => {
+      console.log("Element has entered");
+      animate(".test__class", { opacity: 1 }, { duration: 2 });
+    });
+  };
+
+  // window.location.reload();
+
   return (
     <div className="contact">
       <div className="contact__left">
-        <div>
+        <div className="test__class">
           <Card
             headline={introHeadline}
             subheadline={introSubHeadline}
