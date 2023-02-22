@@ -29,6 +29,7 @@
 
   &__right-image {
     @include medium {
+      opacity: 0;
       width: calc((100vw / 2));
       height: 650px;
       background: center/cover url("../../assets/images/portrait.jpg");
@@ -36,6 +37,7 @@
   }
 
   &__form {
+    opacity: 0;
     margin: 0 30px;
     padding-bottom: 30px;
     display: flex;

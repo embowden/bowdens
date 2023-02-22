@@ -6,6 +6,7 @@
   align-items: center;
 
   &__poster {
+    opacity: 0;
     height: 50vh;
     display: flex;
     align-items: center;
@@ -63,6 +64,7 @@
   }
 
   &__intro {
+    opacity: 0;
     font-size: 12px;
     display: flex;
     flex-direction: column;
@@ -120,6 +122,7 @@
   }
 
   &__article {
+    opacity: 0;
     @include medium {
       width: 50%;
       display: flex;
@@ -129,6 +132,7 @@
   }
 
   &__article-image {
+    opacity: 0;
     height: 50vh;
     display: flex;
     align-items: center;
@@ -206,6 +210,7 @@
   }
 
   &__left-image {
+    opacity: 0;
     width: 100%;
     @include medium {
       width: 50%;
@@ -220,6 +225,7 @@
   }
 
   &__left-link {
+    opacity: 0;
     font-size: 10px;
     position: absolute;
     margin-bottom: 15px;
@@ -246,6 +252,7 @@
   }
 
   &__right-image {
+    opacity: 0;
     width: 100%;
     @include medium {
       height: 60vh;
@@ -253,6 +260,7 @@
   }
 
   &__right-link {
+    opacity: 0;
     font-size: 10px;
     position: absolute;
     margin-top: 15px;
@@ -271,8 +279,4 @@
 
 .noDisplay {
   display: none;
-}
-
-.opacityZero {
-  opacity: 0;
 }

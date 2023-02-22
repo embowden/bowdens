@@ -4,11 +4,13 @@
 .about {
   &__padding {
     @include medium {
+      opacity: 0;
       margin: 0 100px;
     }
   }
 
   &__family {
+    opacity: 0;
     height: 60vh;
     display: flex;
     align-items: center;
@@ -25,6 +27,7 @@
   }
 
   &__top-medium-card {
+    opacity: 0;
     @include medium {
       display: flex;
       width: 50%;
@@ -52,6 +55,7 @@
   }
 
   &__left {
+    opacity: 0;
     width: 50%;
     justify-content: center;
     display: flex;
@@ -66,6 +70,7 @@
   }
 
   &__right {
+    opacity: 0;
     width: 50%;
     justify-content: center;
     display: flex;
@@ -80,6 +85,7 @@
   }
 
   &__mid-medium-card {
+    opacity: 0;
     @include medium {
       width: 50%;
       display: flex;
@@ -89,6 +95,7 @@
   }
 
   &__diamond {
+    opacity: 0;
     height: 60vh;
     display: flex;
     align-items: center;
@@ -110,6 +117,7 @@
   }
 
   &__bottom-medium-card {
+    opacity: 0;
     @include medium {
       display: flex;
       justify-content: center;

@@ -144,9 +144,16 @@ const Contact = () => {
   }, []);
 
   const play = () => {
-    inView(".opacityZero", () => {
-      console.log("Element has entered");
-      animate(".opacityZero", { opacity: 1 }, { duration: 2 });
+    const contactElements = [
+      ".contact__form",
+      ".opacityZero",
+      ".contact__right-image",
+    ];
+
+    contactElements.forEach((section) => {
+      inView(section, () => {
+        animate(section, { opacity: 1 }, { duration: 2 }, { delay: 0.5 });
+      });
     });
   };
 
@@ -161,11 +168,7 @@ const Contact = () => {
             weight="big"
           />
         </div>
-        <form
-          ref={form}
-          onSubmit={handleSubmit}
-          className="contact__form opacityZero"
-        >
+        <form ref={form} onSubmit={handleSubmit} className="contact__form">
           <div className="contact__box">
             <label className="contact__label" htmlFor="userName">
               Name
@@ -254,7 +257,7 @@ const Contact = () => {
         </form>
       </div>
       <div className="contact__right">
-        <div className="contact__right-image opacityZero"></div>
+        <div className="contact__right-image"></div>
       </div>
     </div>
   );

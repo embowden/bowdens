@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../Card/Card";
 import "./about.scss";
+import { inView, animate } from "motion";
 
 export const About = () => {
   // Handle window resize
@@ -16,7 +17,7 @@ export const About = () => {
     });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -41,6 +42,30 @@ export const About = () => {
   const cardThreeText =
     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam maxime accusantium aliquid. Harum ipsa tempore architecto. Blanditiis quis dolorem aliquid quas veritatis ipsa fugiat necessitatibus nisi. Incidunt necessitatibus non voluptatem?";
   const screenWidth = window.innerWidth;
+
+  // ANIMATION
+  useEffect(() => {
+    play();
+  }, []);
+
+  const play = () => {
+    const aboutElements = [
+      ".about__padding",
+      ".about__family",
+      ".about__top-medium-card",
+      ".about__mid-medium-card",
+      ".about__bottom-medium-card",
+      ".about__left",
+      ".about__right",
+      ".about__diamond",
+    ];
+
+    aboutElements.forEach((section) => {
+      inView(section, () => {
+        animate(section, { opacity: 1 }, { duration: 2 }, { delay: 0.5 });
+      });
+    });
+  };
 
   return (
     <div className="about">
