@@ -15,6 +15,5 @@ HANDLE RESIZE - https://dirask.com/posts/React-rerender-component-on-browser-res
 GSAP - https://greensock.com/docs/v3/Installation
 
 TO DO LIST: 
-*Fix animation on home page (cards)
 *Try carousel with images either side?
 *Laptop/large sizings

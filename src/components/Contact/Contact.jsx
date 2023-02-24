@@ -3,6 +3,9 @@ import emailjs from "@emailjs/browser";
 import "./contact.scss";
 import Card from "../Card/Card";
 import { inView, animate } from "motion";
+import Swal from "sweetalert2";
+import "sweetalert2/src/sweetalert2.scss";
+import "animate.css";
 
 const Contact = () => {
   const [formNotValid, setFormValid] = useState(true);
@@ -32,8 +35,6 @@ const Contact = () => {
       window.removeEventListener("resize", handleResize);
     };
   });
-
-  console.log("rerender?");
 
   // Intro information
   const introHeadline = "Enquiry Form";
@@ -98,6 +99,21 @@ const Contact = () => {
       );
   };
 
+  // SWEET ALERT
+  const sweetAlert = () => {
+    Swal.fire({
+      color: "gray",
+      confirmButtonColor: "black",
+      title: `<span style="font-size: 16px">Thank you for your enquiry.<br>A member of our team will be in touch with you shortly.</span>`,
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
+  };
+
   //HANDLE ON SUBMIT (validation + send email)
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -110,6 +126,7 @@ const Contact = () => {
       setUserEmail("");
       setUserNumber("");
       setMessage("");
+      sweetAlert();
       e.target.reset();
     } else {
       console.log("submit error");

@@ -9,35 +9,6 @@
     }
   }
 
-  &__padding {
-    @include medium {
-      margin: 0 100px;
-    }
-  }
-
-  &__medium {
-    @include medium {
-      display: flex;
-      padding-bottom: 40px;
-      padding-top: 20px;
-    }
-  }
-
-  &__medium-card {
-    @include medium {
-      width: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  &__medium-card-box {
-    @include medium {
-      margin: 0 40px;
-    }
-  }
-
   &__carousel {
     background-color: grey;
     height: 100%;
@@ -45,9 +16,5 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include medium {
-      width: 50%;
-      height: 50%;
-    }
   }
 }
