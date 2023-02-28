@@ -24,12 +24,19 @@
     @include large {
       height: 70vh;
     }
+    @include x-large {
+      max-height: 660px;
+    }
   }
 
   &__top-medium {
     @include medium {
-      padding-top: 40px;
+      margin-top: 40px;
       display: flex;
+      max-height: 550px;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -49,7 +56,11 @@
   &__mid-medium {
     @include medium {
       display: flex;
-      padding-top: 40px;
+      margin-top: 40px;
+      max-height: 550px;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -126,6 +137,14 @@
       padding: 40px 0;
       display: flex;
       width: 100%;
+      max-height: 550px;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      @include large {
+        padding: 0;
+        margin: 40px 0;
+      }
     }
   }
 

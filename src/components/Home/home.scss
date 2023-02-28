@@ -19,6 +19,9 @@
     @include large {
       height: 70vh;
     }
+    @include x-large {
+      max-height: 660px;
+    }
   }
 
   &__poster-text {
@@ -31,9 +34,6 @@
     top: 57%;
     @include medium {
       top: 59%;
-    }
-
-    @include large {
     }
   }
 
@@ -156,6 +156,9 @@
     @include large {
       height: 70vh;
     }
+    @include x-large {
+      max-height: 660px;
+    }
   }
 
   &__article-wrapper {
@@ -237,6 +240,9 @@
     @include large {
       height: 70vh;
     }
+    @include x-large {
+      max-height: 660px;
+    }
   }
 
   &__left-link {
@@ -274,6 +280,9 @@
     }
     @include large {
       height: 70vh;
+    }
+    @include x-large {
+      max-height: 660px;
     }
   }
 

@@ -16,6 +16,10 @@
   }
 
   @include large {
+    width: 61px;
+    height: 52px;
+    left: 20px;
+    top: 24px;
   }
 }
 
@@ -98,8 +102,5 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
   @include medium {
     width: 150px;
-  }
-
-  @include large {
   }
 }
