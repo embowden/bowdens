@@ -29,7 +29,6 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    // play();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);

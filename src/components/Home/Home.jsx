@@ -60,6 +60,7 @@ export const Home = () => {
       ".home__right-image",
       ".home__right-link",
       ".home__left-link",
+      ".home__squares",
     ];
 
     homeElements.forEach((section) => {

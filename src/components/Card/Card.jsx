@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./card.scss";
+import { inView, animate } from "motion";
 
 const Card = ({ headline, subheadline, text, weight }) => {
   const weightCheck = (weight) => {
@@ -8,6 +9,21 @@ const Card = ({ headline, subheadline, text, weight }) => {
     } else if (weight === "small") {
       return false;
     }
+  };
+
+  // ANIMATION
+  useEffect(() => {
+    play();
+  }, []);
+
+  const play = () => {
+    const galleryElements = [".card"];
+
+    galleryElements.forEach((section) => {
+      inView(section, () => {
+        animate(section, { opacity: 1 }, { duration: 2 }, { delay: 0.5 });
+      });
+    });
   };
 
   return (
