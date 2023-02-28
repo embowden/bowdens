@@ -14,6 +14,9 @@
     @include medium {
       margin: 0 100px;
     }
+    @include large {
+      margin: 0 200px;
+    }
   }
 
   &__medium {

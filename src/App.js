@@ -18,12 +18,16 @@ function App() {
         <div>
           <Burger />
           <LogoTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="gallery" element={<Gallery />} />
-            <Route path="contact" element={<Contact />} />
-          </Routes>
+          <div className="outer__wrapper">
+            <div className="inner__wrapper">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="about" element={<About />} />
+                <Route path="gallery" element={<Gallery />} />
+                <Route path="contact" element={<Contact />} />
+              </Routes>
+            </div>
+          </div>
         </div>
         <div className="footer">
           <Footer />

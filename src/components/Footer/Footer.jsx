@@ -8,7 +8,7 @@ import youtubeIcon from "../../assets/icons/youtube.png";
 const Footer = () => {
   return (
     <>
-      <div className="footer__divider"></div>
+      {/* <div className="footer__divider"></div> */}
       <footer className="footer">
         <div className="footer__socials">
           <a href="https://www.facebook.com" target="_blank">
@@ -37,11 +37,7 @@ const Footer = () => {
           Bowdens Registered Office, 2nd Floor Diamond Building, 100-102 Great
           Jewellery Street, London, W1 6QG
         </div>
-        <NavLink
-          to="/contact"
-          className="footer__contact"
-          // className={(isActive) => "nav__link" + (!isActive ? "" : "--active")}
-        >
+        <NavLink to="/contact" className="footer__contact">
           Contact Us
         </NavLink>
       </footer>

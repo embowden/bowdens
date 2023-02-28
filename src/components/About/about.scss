@@ -8,6 +8,9 @@
       opacity: 0;
       margin: 0 100px;
     }
+    @include large {
+      margin: 0 200px;
+    }
   }
 
   &__family {
@@ -18,6 +21,9 @@
     flex-direction: row;
     position: relative;
     background: center/cover url("../../assets/images/family.jpg");
+    @include large {
+      height: 70vh;
+    }
   }
 
   &__top-medium {
@@ -34,6 +40,9 @@
       width: 50%;
       justify-content: center;
       align-items: center;
+    }
+    @include large {
+      padding: 0 25px;
     }
   }
 
@@ -93,6 +102,9 @@
       justify-content: center;
       align-items: center;
     }
+    @include large {
+      padding: 0 25px;
+    }
   }
 
   &__diamond {
@@ -124,6 +136,9 @@
       justify-content: center;
       align-items: center;
       width: 50%;
+    }
+    @include large {
+      padding: 0 25px;
     }
   }
 }

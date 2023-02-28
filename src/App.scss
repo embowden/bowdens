@@ -1,12 +1,26 @@
 @use "./styles/partials/breakpoints";
 @use "./styles/partials/resets";
+@use "./styles/partials/breakpoints" as *;
 
 .app {
   min-height: 100vh;
   overflow: hidden;
   display: block;
   position: relative;
-  padding-bottom: 120px; /* height of your footer */
+  padding-bottom: 120px;
+}
+
+.outer__wrapper {
+  @include large {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.inner__wrapper {
+  @include large {
+    max-width: 1280px;
+  }
 }
 
 .footer {
