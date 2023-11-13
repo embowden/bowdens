@@ -39,7 +39,7 @@ const Contact = () => {
   const introHeadline = "Enquiry Form";
   const introSubHeadline = "Design your Dreams";
   const introText =
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum impedit alias doloremque debitis non? Aliquid hic ea voluptatem expedita dolorum dolore neque, voluptate velit similique eveniet ratione, soluta quam omnis!";
+    "Let us help you fulfil your dreams. Send the enquiry form with a brief description of how we can you make your dream creation come true.";
   const form = useRef();
 
   //HANDLE CHANGE OF STATE

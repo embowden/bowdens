@@ -27,16 +27,16 @@ const Gallery = () => {
   });
 
   //CARD 1
-  const introHeadline = "Client Examples";
+  const introHeadline = "Current Stock";
   const introSubHeadline = "Custom. Bespoke.";
   const introText =
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum impedit alias doloremque debitis non? Aliquid hic ea voluptatem expedita dolorum dolore neque, voluptate velit similique eveniet ratione, soluta quam omnis!";
+    "Our current stock can be seen in the gallery below, however you can choose the cut, clarity, carat, colour and setting for your previous set lab grown diamond creations.";
 
   //CARD 2
   const secondHeadline = "Interested?";
   const secondSubHeadline = "Make an enquiry";
   const secondText =
-    "Click the link above. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates laboriosam asperiores cupiditate dolor quas quidem accusantium officiis nesciunt, molestiae distinctio adipisci totam esse iste, voluptatem, maiores repellendus mollitia ipsum illo.";
+    "Visit the link above and let us help you fulfil your dreams.";
 
   // ANIMATION
   useEffect(() => {

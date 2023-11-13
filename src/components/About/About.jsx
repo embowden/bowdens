@@ -26,22 +26,22 @@ export const About = () => {
 
   // CARD 1
   const cardOneHeadline = "Family Run Business";
-  const cardOneSubHeadline = "Shiny. Sparkly. Bling.";
+  const cardOneSubHeadline = "Ambleside, Lake District";
   const cardOneText =
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam maxime accusantium aliquid. Harum ipsa tempore architecto. Blanditiis quis dolorem aliquid quas veritatis ipsa fugiat necessitatibus nisi. Incidunt necessitatibus non voluptatem?";
+    "We are a small family run business based in Ambleside, the Lake District. We support you through the process of design and manufacture of your Lab Made Diamond creation, whether it is an engagement ring, an eternity ring, or that special piece that is unique to you - we are here to help. Please use the enquiry form to contact us and let us help you achieve something very special.";
 
-  // CARD 2
-  const cardTwoHeadline = "Made in China";
-  const cardTwoSubHeadline = "Shiny. Sparkly. Bling.";
-  const cardTwoText =
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam maxime accusantium aliquid. Harum ipsa tempore architecto. Blanditiis quis dolorem aliquid quas veritatis ipsa fugiat necessitatibus nisi. Incidunt necessitatibus non voluptatem?";
+  // // CARD 2
+  // const cardTwoHeadline = "Made in China";
+  // const cardTwoSubHeadline = "Shiny. Sparkly. Bling.";
+  // const cardTwoText =
+  //   "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam maxime accusantium aliquid. Harum ipsa tempore architecto. Blanditiis quis dolorem aliquid quas veritatis ipsa fugiat necessitatibus nisi. Incidunt necessitatibus non voluptatem?";
 
-  // CARD 3
-  const cardThreeHeadline = "The Result";
-  const cardThreeSubHeadline = "Shiny. Sparkly. Bling.";
-  const cardThreeText =
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam maxime accusantium aliquid. Harum ipsa tempore architecto. Blanditiis quis dolorem aliquid quas veritatis ipsa fugiat necessitatibus nisi. Incidunt necessitatibus non voluptatem?";
-  const screenWidth = window.innerWidth;
+  // // CARD 3
+  // const cardThreeHeadline = "The Result";
+  // const cardThreeSubHeadline = "Shiny. Sparkly. Bling.";
+  // const cardThreeText =
+  //   "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam maxime accusantium aliquid. Harum ipsa tempore architecto. Blanditiis quis dolorem aliquid quas veritatis ipsa fugiat necessitatibus nisi. Incidunt necessitatibus non voluptatem?";
+  // const screenWidth = window.innerWidth;
 
   // ANIMATION
   useEffect(() => {
@@ -78,7 +78,7 @@ export const About = () => {
         />
       </div>
       <div className="about__family"></div>
-      <div className="about__top-medium">
+      {/* <div className="about__top-medium">
         <div className="about__top-medium-card">
           <Card
             headline={cardTwoHeadline}
@@ -120,7 +120,7 @@ export const About = () => {
         <div
           className={screenWidth >= 768 ? "about__diamond" : "noDisplay"}
         ></div>
-      </div>
+      </div> */}
     </div>
   );
 };

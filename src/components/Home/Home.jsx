@@ -30,19 +30,19 @@ export const Home = () => {
   const posterHeadline = "Lab-Grown Diamonds";
   const posterSubHeadline = "Modern. Ethical. Conscious. Empowering.";
   const introHeadline = "welcome to";
-  const introSubHeadline = "Bowdens Diamonds";
+  const introSubHeadline = "Diamonds Made For You";
   const introBlurb =
-    "The home of luxury jewellery, exquiste timepieces and designer accessories, as well as our own collections and beautifully crafted custom pieces.";
+    "The home of luxury, timeless pieces with a modern twist, using Lab Grown diamonds in our creations. You can design your own piece in the most precious mentals and lab grown diamond specifications.";
   const reviewHeadline = "Only Luxury.";
   const reviewSubHeadline = "For you.";
   const reviewText =
-    "The Bowdens reputation for the finest products backed up by great customer service is well earned. A company you can trust. Thank you!";
-  const reviewName = "Lizzie Knight";
-  const lastHeadline = "More text.";
-  const lastSubHeadline = "Whatever you want.";
+    "The company has been trading since 2016 and offers the finest products and customer service, whilst always trying to bring our collections to you at an affordable price.";
+  // const reviewName = "Visit Gallery";
+  const lastHeadline = "Create your";
+  const lastSubHeadline = "own creation";
   const lastText =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ducimus quasi sed laborum ipsam tempora tenetur modi sunt? Quia alias doloribus, est nisi debitis neque et dicta maxime ipsam voluptatibus!";
-  const lastSmallText = "Lorem Ipsum";
+    "You can choose the following for your previous set Lab Grown Diamond creation:";
+  // const lastSmallText = "Lorem Ipsum";
   const screenWidth = window.innerWidth;
 
   // ANIMATION
@@ -112,7 +112,9 @@ export const Home = () => {
               <p className="home__article-header">{reviewHeadline}</p>
               <p className="home__article-subheader">{reviewSubHeadline}</p>
               <p className="home__article-text">{reviewText}</p>
-              <p className="home__article-person">{reviewName}</p>
+              <NavLink to="/gallery" className="home__intro-contact">
+                Visit Gallery
+              </NavLink>
             </div>
           </section>
         </div>
@@ -140,7 +142,19 @@ export const Home = () => {
               <p className="home__article-header">{lastHeadline}</p>
               <p className="home__article-subheader">{lastSubHeadline}</p>
               <p className="home__article-text">{lastText}</p>
-              <p className="home__article-person">{lastSmallText}</p>
+              <p className="home__article-text">
+                <ul>
+                  <li>Cut - Shape of the Diamond</li>
+                  <li>Clarity - Inclusions in the Diamond</li>
+                  <li>Carat - Weight of the Diamond</li>
+                  <li>Colour - Shade of the Diamond</li>
+                  <li>Setting - 18ct White or Yellow Gold / Platinum</li>
+                </ul>
+              </p>
+              {/* <p className="home__article-person">{lastSmallText}</p> */}
+              <NavLink to="/contact" className="home__intro-contact">
+                Bespoke Enquiries
+              </NavLink>
             </div>
           </section>
           <div className="home__right-square">
@@ -156,7 +170,19 @@ export const Home = () => {
             <p className="home__article-header">{lastHeadline}</p>
             <p className="home__article-subheader">{lastSubHeadline}</p>
             <p className="home__article-text">{lastText}</p>
-            <p className="home__article-person">{lastSmallText}</p>
+            <p className="home__article-text">
+              <ul>
+                <li>Cut - Shape of the Diamond</li>
+                <li>Clarity - Inclusions in the Diamond</li>
+                <li>Carat - Weight of the Diamond</li>
+                <li>Colour - Shade of the Diamond</li>
+                <li>Setting - 18ct White or Yellow Gold / Platinum</li>
+              </ul>
+            </p>
+            {/* <p className="home__article-person">{lastSmallText}</p> */}
+            <NavLink to="/contact" className="home__intro-contact">
+              Bespoke Enquiries
+            </NavLink>
           </div>
         </section>
       </div>
