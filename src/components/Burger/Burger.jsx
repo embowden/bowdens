@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { slide as Menu } from "react-burger-menu";
 import { NavLink } from "react-router-dom";
 import "./burger.scss";
-import bowdenLogo from "../../assets/logo/logo.png";
+import bowdenLogo from "../../assets/logo/Gold-FR-crop.png";
 
 const Burger = () => {
   const [isOpen, setOpen] = useState(false);

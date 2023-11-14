@@ -4,6 +4,7 @@ import "./footer.scss";
 import facebookIcon from "../../assets/icons/facebook.png";
 import instagramIcon from "../../assets/icons/instagram.png";
 import youtubeIcon from "../../assets/icons/youtube.png";
+import goldFR from "../../assets/logo/Gold-FR-crop.png";
 
 const Footer = () => {
   return (
@@ -33,6 +34,7 @@ const Footer = () => {
             />
           </a>
         </div>
+        <img src={goldFR} alt="Gold FR Ltd Logo" className="footer__logo" />
         <div className="footer__address">
           Bowdens Registered Office, 2nd Floor Diamond Building, 100-102 Great
           Jewellery Street, London, W1 6QG

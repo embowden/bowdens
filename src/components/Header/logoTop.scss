@@ -9,14 +9,14 @@
 
   &__link {
     height: 50%;
-    width: 150px;
+    width: 220px;
 
     @include medium {
-      width: 200px;
+      width: 280px;
     }
 
     @include large {
-      width: 300px;
+      width: 420px;
     }
   }
 

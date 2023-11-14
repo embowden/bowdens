@@ -3,10 +3,10 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 18px;
-  top: 15px;
+  width: 30px;
+  height: 25px;
+  left: 15px;
+  top: 20px;
 
   @include medium {
     width: 40px;

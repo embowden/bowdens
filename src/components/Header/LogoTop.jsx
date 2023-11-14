@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./logoTop.scss";
-import bowdenLogo from "../../assets/logo/logo.png";
+import bowdenLogo from "../../assets/logo/Diamonds-FR-crop.png";
 
 export const LogoTop = () => {
   return (
