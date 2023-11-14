@@ -11,7 +11,7 @@ const Footer = () => {
     <>
       {/* <div className="footer__divider"></div> */}
       <footer className="footer">
-        <div className="footer__socials">
+        {/* <div className="footer__socials">
           <a href="https://www.facebook.com" target="_blank">
             <img
               src={facebookIcon}
@@ -33,7 +33,7 @@ const Footer = () => {
               className="footer__icon"
             />
           </a>
-        </div>
+        </div> */}
         <img src={goldFR} alt="Gold FR Ltd Logo" className="footer__logo" />
         <div className="footer__address">
           Bowdens Registered Office, 2nd Floor Diamond Building, 100-102 Great
